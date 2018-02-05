@@ -1,0 +1,29 @@
+Kivi 1:
+R:0.370
+G:0.370
+B:0.370
+
+Kivi2:
+R:0.780
+G:0.688
+B:0.487
+
+Mänty:
+
+Lehdet:       Runko:
+R:0.110	      R:0.541
+G:0.690       G:0.330
+B:0.272       B:0.195
+
+
+Kuusi(Piikki ja Normaali):
+
+Neulaset:     Runko:
+R:0.111       R:0.541
+G:0.570       G:0.330
+B:0.139       B:0.195
+
+
+
+
+

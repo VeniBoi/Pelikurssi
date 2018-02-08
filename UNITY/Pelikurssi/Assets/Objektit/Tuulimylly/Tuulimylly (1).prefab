@@ -38,6 +38,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4004300930204896}
   - component: {fileID: 95682524144578800}
+  - component: {fileID: 33222763268514206}
   m_Layer: 0
   m_Name: Tuulimylly (1)
   m_TagString: Untagged
@@ -173,6 +174,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!33 &33222763268514206
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1701192606434486}
+  m_Mesh: {fileID: 0}
 --- !u!33 &33250399503551934
 MeshFilter:
   m_ObjectHideFlags: 1

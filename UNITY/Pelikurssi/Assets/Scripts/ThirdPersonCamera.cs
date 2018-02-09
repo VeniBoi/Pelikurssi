@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿//Spagettikoodi a'la Veni
+//Use at your own risk. :-D
+
+using UnityEngine;
 using System.Collections;
 
 public class ThirdPersonCamera : MonoBehaviour

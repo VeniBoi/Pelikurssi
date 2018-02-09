@@ -35,7 +35,7 @@ public class SieniNoukinta : MonoBehaviour
 	}
 	void SetCountText()
 	{
-		countText.text = "Score: " + score + ToString();
+		countText.text = "Score: " + score;
 
 
 	}

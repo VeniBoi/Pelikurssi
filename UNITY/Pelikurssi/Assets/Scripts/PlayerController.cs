@@ -1,13 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
-using UnityEngine;
-using System.Collections;
+
 
 public class PlayerController : MonoBehaviour
-{
 
-    public float walkSpeed = 2;
+	
+{
+	
+
+	public float walkSpeed = 2;
     public float runSpeed = 6;
     public float gravity = -12;
     public float jumpHeight = 1;
@@ -22,7 +25,9 @@ public class PlayerController : MonoBehaviour
     float currentSpeed;
     float velocityY;
 
-    Animator animator;
+	
+
+	Animator animator;
     Transform cameraT;
     CharacterController controller;
 
@@ -31,7 +36,9 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         cameraT = Camera.main.transform;
         controller = GetComponent<CharacterController>();
-    }
+
+	                                        
+	}
 
     void Update()
     {
@@ -86,4 +93,13 @@ public class PlayerController : MonoBehaviour
         }
         return smoothTime / airControlPercent;
     }
+
+
+	  
+	 
+
 }
+
+
+
+

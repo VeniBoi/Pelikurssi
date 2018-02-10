@@ -10,15 +10,15 @@ using UnityEngine.UI;
 public class SieniNoukinta : MonoBehaviour
 {
 
-	private int score;
+	public int score;
 	public Text countText;
-
 
 	// Use this for initialization
 	void Start()
 	{
 		score = 0;                       //Asetetaan pistemäärä nollaan.
 		SetCountText();
+		
 	}
 
 	// Update is called once per frame
@@ -26,22 +26,58 @@ public class SieniNoukinta : MonoBehaviour
 	{
 	}
 
-	void OnTriggerEnter(Collider other)
+	void OnTriggerEnter(Collider other )
 	{
-		if (other.gameObject.CompareTag("PickUp"))          // Sienen piilottaminen kun siihen osuu.
+		if (other.gameObject.CompareTag("Karpassieni"))          // Sienen piilottaminen kun siihen osuu.
 		{
-			Debug.Log("Sieni noukittu!");
+			Debug.Log("Kärpässieni noukittu!");
 			other.gameObject.SetActive(false);
 			score = score + 10;
 			SetCountText();
 		}
 
+		else if (other.gameObject.CompareTag("Keltavahvero"))
+		{
+			Debug.Log("Kanttarelli noukittu!");
+			other.gameObject.SetActive(false);
+			score = score + 15;
+			SetCountText();
+		}
+
+		else if (other.gameObject.CompareTag("Haaparousku"))
+		{
+			Debug.Log("Haaparousku noukittu!");
+			other.gameObject.SetActive(false);
+			score = score + 30;
+			SetCountText();
+		}
+
+		else if (other.gameObject.CompareTag("Herkkutatti"))
+		{
+			Debug.Log("Herkkutatti noukittu!");
+			other.gameObject.SetActive(false);
+			score = score + 50;
+			SetCountText();
+		}
+
+		else if (other.gameObject.CompareTag("PsiloSieni"))
+		{
+			Debug.Log("Psilosieni noukittu!");
+			other.gameObject.SetActive(false);
+			score = score + 5000;
+			SetCountText();
+			GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed += 10;
+		}
+
+
 	}
+
 	void SetCountText()
 	{
 		countText.text = "Score: " + score;
 
 
 	}
+
 }
 	

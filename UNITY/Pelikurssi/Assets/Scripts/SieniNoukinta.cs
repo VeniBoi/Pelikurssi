@@ -18,7 +18,6 @@ public class SieniNoukinta : MonoBehaviour
 	{
 		score = 0;                       //Asetetaan pistemäärä nollaan.
 		SetCountText();
-		
 	}
 
 	// Update is called once per frame
@@ -34,6 +33,9 @@ public class SieniNoukinta : MonoBehaviour
 			other.gameObject.SetActive(false);
 			score = score + 10;
 			SetCountText();
+			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
+			
+
 		}
 
 		else if (other.gameObject.CompareTag("Keltavahvero"))
@@ -42,6 +44,7 @@ public class SieniNoukinta : MonoBehaviour
 			other.gameObject.SetActive(false);
 			score = score + 15;
 			SetCountText();
+			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 		}
 
 		else if (other.gameObject.CompareTag("Haaparousku"))
@@ -50,6 +53,7 @@ public class SieniNoukinta : MonoBehaviour
 			other.gameObject.SetActive(false);
 			score = score + 30;
 			SetCountText();
+			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 		}
 
 		else if (other.gameObject.CompareTag("Herkkutatti"))
@@ -58,6 +62,7 @@ public class SieniNoukinta : MonoBehaviour
 			other.gameObject.SetActive(false);
 			score = score + 50;
 			SetCountText();
+			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 		}
 
 		else if (other.gameObject.CompareTag("PsiloSieni"))
@@ -67,6 +72,7 @@ public class SieniNoukinta : MonoBehaviour
 			score = score + 5000;
 			SetCountText();
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed += 10;
+			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 		}
 
 

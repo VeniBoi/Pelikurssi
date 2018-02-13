@@ -12,6 +12,7 @@ TagManager:
   - PsiloSieni
   - Cube1
   - Cube2
+  - Spawner
   layers:
   - Default
   - TransparentFX

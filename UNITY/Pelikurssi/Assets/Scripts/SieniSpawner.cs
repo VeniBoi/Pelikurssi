@@ -13,9 +13,8 @@ public class SieniSpawner : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
-		randomInt = Random.Range(0, spawnees.Length);
-		Instantiate(spawnees[randomInt], spawnPos.position, Quaternion.Euler(270, 0, 0));
-	}
+        randomSpawner();
+    }
 	void Update()
 	{
 	}
@@ -36,10 +35,16 @@ public class SieniSpawner : MonoBehaviour
 
 	IEnumerator coRoutineTest()
 	{
+        
 		Debug.Log("Uusi sieni");
 		yield return new WaitForSeconds(3);
-		randomInt = Random.Range(0, spawnees.Length);
-		Instantiate(spawnees[randomInt], spawnPos.position, Quaternion.Euler(270, 0, 0));
+        randomSpawner();
 
 	}
+
+    void randomSpawner()
+    {
+        randomInt = Random.Range(0, spawnees.Length);
+        Instantiate(spawnees[randomInt], spawnPos.position, Quaternion.Euler(270, 0, 0));
+    }
 }

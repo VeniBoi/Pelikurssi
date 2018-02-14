@@ -30,8 +30,8 @@ public class SieniNoukinta : MonoBehaviour
 		if (other.gameObject.CompareTag("Karpassieni"))          // Sienen piilottaminen kun siihen osuu.
 		{
 			Debug.Log("Kärpässieni noukittu!");
-			other.gameObject.SetActive(false);
-			score = score + 10;
+            Destroy(other.gameObject);
+            score = score + 10;
 			SetCountText();
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 			
@@ -41,8 +41,8 @@ public class SieniNoukinta : MonoBehaviour
 		else if (other.gameObject.CompareTag("Keltavahvero"))
 		{
 			Debug.Log("Kanttarelli noukittu!");
-			other.gameObject.SetActive(false);
-			score = score + 15;
+            Destroy(other.gameObject);
+            score = score + 15;
 			SetCountText();
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 		}
@@ -50,8 +50,8 @@ public class SieniNoukinta : MonoBehaviour
 		else if (other.gameObject.CompareTag("Haaparousku"))
 		{
 			Debug.Log("Haaparousku noukittu!");
-			other.gameObject.SetActive(false);
-			score = score + 30;
+            Destroy(other.gameObject);
+            score = score + 30;
 			SetCountText();
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 		}
@@ -59,8 +59,8 @@ public class SieniNoukinta : MonoBehaviour
 		else if (other.gameObject.CompareTag("Herkkutatti"))
 		{
 			Debug.Log("Herkkutatti noukittu!");
-			other.gameObject.SetActive(false);
-			score = score + 50;
+            Destroy(other.gameObject);
+            score = score + 50;
 			SetCountText();
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 		}
@@ -68,8 +68,8 @@ public class SieniNoukinta : MonoBehaviour
 		else if (other.gameObject.CompareTag("PsiloSieni"))
 		{
 			Debug.Log("Psilosieni noukittu!");
-			other.gameObject.SetActive(false);
-			score = score + 5000;
+            Destroy(other.gameObject);
+            score = score + 5000;
 			SetCountText();
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed += 10;
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");

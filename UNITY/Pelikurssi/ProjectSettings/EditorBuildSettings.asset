@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene1.unity
     guid: d6f5f4c244d009645bf227dab7bb5def
+  - enabled: 1
+    path: Assets/Scenes/Loppu.unity
+    guid: 0b6722068f9c9394facf6b2e026c1bd5

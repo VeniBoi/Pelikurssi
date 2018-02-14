@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SieniSpawner : MonoBehaviour
 {
@@ -24,6 +25,7 @@ public class SieniSpawner : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("Player"))          // Sienen piilottaminen kun siihen osuu.
 		{
+			GetComponent<Collider>().enabled = false;
 			StartCoroutine(coRoutineTest());
 
 
@@ -36,15 +38,26 @@ public class SieniSpawner : MonoBehaviour
 	IEnumerator coRoutineTest()
 	{
         
-		Debug.Log("Uusi sieni");
+		
 		yield return new WaitForSeconds(3);
-        randomSpawner();
+		Debug.Log("Uusi sieni");
+		randomSpawner();
+		Debug.Log("Odotetaan 5 sekuntia.");
+		yield return new WaitForSeconds(5);
+		Debug.Log("5 sekuntia on mennyt.");
+		GetComponent<Collider>().enabled = true;
+		
+		
 
 	}
 
-    void randomSpawner()
+	
+
+	void randomSpawner()
     {
         randomInt = Random.Range(0, spawnees.Length);
         Instantiate(spawnees[randomInt], spawnPos.position, Quaternion.Euler(270, 0, 0));
     }
+
+	
 }

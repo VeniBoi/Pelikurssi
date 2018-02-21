@@ -12,7 +12,7 @@ public class FinalScore : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		scoreText.text = "FINAL SCORE:" + SieniNoukinta.score;  //Päätetään mitä teksti sanoo ja haetaan score toisesta scriptistä.
+		scoreText.text = "FINAL SCORE: " + SieniNoukinta.score;  //Päätetään mitä teksti sanoo ja haetaan score toisesta scriptistä.
 	}
 	
 	// Update is called once per frame

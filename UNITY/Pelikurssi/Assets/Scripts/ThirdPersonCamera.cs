@@ -24,7 +24,7 @@ public class ThirdPersonCamera : MonoBehaviour
     {
         if (lockCursor)
         {
-            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.lockState = CursorLockMode.Locked;  //Lukitaan kursori näyttöön ja piilotetaan se
             Cursor.visible = false;
         }
     }

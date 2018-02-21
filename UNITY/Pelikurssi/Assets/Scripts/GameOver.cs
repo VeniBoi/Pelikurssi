@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿//Spagettikoodi a'la Veni
+//Use at your own risk. :-D
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -7,7 +10,7 @@ public class GameOver : MonoBehaviour {
 
 	 void Start()
 	{
-		Cursor.lockState = CursorLockMode.None;
+		Cursor.lockState = CursorLockMode.None;		//Asetetaan kursori näkyväksi uudestaan.
 		Cursor.visible = true;
 	}
 
@@ -18,7 +21,7 @@ public class GameOver : MonoBehaviour {
 		SceneManager.LoadScene("Menu");
 
 	}
-
+											//Tehdään funktioita joita UI:n buttonit käyttävät.
 
 	public void QuitGame()
 	{

@@ -28,11 +28,11 @@ public class SieniNoukinta : MonoBehaviour
 
 	void OnTriggerEnter(Collider other )
 	{
-		if (other.gameObject.CompareTag("Karpassieni"))          // Sienen piilottaminen kun siihen osuu.
+		if (other.gameObject.CompareTag("Karpassieni"))          
 		{
 			Debug.Log("Kärpässieni noukittu!");
-            Destroy(other.gameObject);
-            score = score + 10;
+            Destroy(other.gameObject);                      // Sienen tuhoaminen kun siihen osuu.
+			score = score + 10;								// Scoren lisääminen.
 			SetCountText();
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 			

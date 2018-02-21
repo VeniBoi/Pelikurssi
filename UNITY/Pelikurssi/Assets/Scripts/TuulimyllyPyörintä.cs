@@ -12,7 +12,7 @@ public class TuulimyllyPyörintä : MonoBehaviour {
 	
 	void Update () {
 
-		transform.Rotate(Vector3.up, speed * Time.deltaTime);
+		transform.Rotate(Vector3.up, speed * Time.deltaTime);   //Vector.up/down/right/left/forward/back, päättää pyörimisen suunnan.
 
 	}
 }

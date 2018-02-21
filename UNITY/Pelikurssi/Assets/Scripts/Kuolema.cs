@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿//Spagettikoodi a'la Veni
+//Use at your own risk. :-D
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -16,11 +19,11 @@ public class Kuolema : MonoBehaviour {
 
 	}
 
-	 void OnTriggerEnter(Collider other)
-	{
+	 void OnTriggerEnter(Collider other)				//Jos objekti jolla on pelaaja tägi osuu tähän collideriin
+	{													// niin ladataan uusi  scene (loppu).
 		if (other.gameObject.CompareTag("Player"))
 		{
-			Debug.Log("Loppu ladattu.");
+			Debug.Log("Loppu ladattu.");				
 			
 			SceneManager.LoadScene("Loppu");
 		}

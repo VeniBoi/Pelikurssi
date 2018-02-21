@@ -1,4 +1,7 @@
-﻿using System.Collections;
+﻿//Spagettikoodi a'la Veni
+//Use at your own risk. :-D
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -26,7 +29,7 @@ public class SieniSpawner : MonoBehaviour
 		if (other.gameObject.CompareTag("Player"))          // Sienen piilottaminen kun siihen osuu.
 		{
 			GetComponent<Collider>().enabled = false;
-			StartCoroutine(coRoutineTest());
+			StartCoroutine(coRoutineTest());				//ALoitetaan rutiini joka on asetettu alempana.
 
 
 		}
@@ -35,14 +38,14 @@ public class SieniSpawner : MonoBehaviour
 
 	}
 
-	IEnumerator coRoutineTest()
-	{
-        
-		
+	IEnumerator coRoutineTest()					//Rutiini: Kun pelaaja osuu sieneen randomSpawner funktio pyörii läpi
+	{											// Tämän jälkeen odotetaan hetki kunnes sieni spawnaa uudestaan.
+												// Kun sieneen on osuttu asetetaan collideri hetkeksi pois päältä
+												//Tämä estää sienikämppäämisen.
 		yield return new WaitForSeconds(3);
 		Debug.Log("Uusi sieni");
-		randomSpawner();
-		Debug.Log("Odotetaan 5 sekuntia.");
+		randomSpawner();				
+		Debug.Log("Odotetaan 5 sekuntia.");						
 		yield return new WaitForSeconds(5);
 		Debug.Log("5 sekuntia on mennyt.");
 		GetComponent<Collider>().enabled = true;
@@ -53,8 +56,8 @@ public class SieniSpawner : MonoBehaviour
 
 	
 
-	void randomSpawner()
-    {
+	void randomSpawner()										//Ottaa random sienen sille asetetusta listasta
+    {															// Objektin voi asettaa listaan pelin editorista (public).
         randomInt = Random.Range(0, spawnees.Length);
         Instantiate(spawnees[randomInt], spawnPos.position, Quaternion.Euler(270, 0, 0));
     }

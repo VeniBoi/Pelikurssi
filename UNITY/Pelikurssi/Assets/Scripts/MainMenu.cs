@@ -6,7 +6,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour {
+public class MainMenu : MonoBehaviour  //Tehdään funktioita joita UI:n buttonit käyttävät.
+{	 
 
     public void PlayGame()
     {

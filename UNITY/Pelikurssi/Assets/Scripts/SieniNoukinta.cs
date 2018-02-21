@@ -11,7 +11,7 @@ using UnityEngine.SceneManagement;
 public class SieniNoukinta : MonoBehaviour
 {
 
-	public int score;
+	static public int score;
 	public Text countText;
 
 	// Use this for initialization

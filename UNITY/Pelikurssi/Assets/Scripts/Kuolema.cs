@@ -21,6 +21,7 @@ public class Kuolema : MonoBehaviour {
 		if (other.gameObject.CompareTag("Player"))
 		{
 			Debug.Log("Loppu ladattu.");
+			
 			SceneManager.LoadScene("Loppu");
 		}
 

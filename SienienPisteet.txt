@@ -1,0 +1,12 @@
+Sieni		Pisteet		Special
+
+Kärpässieni:	-50		Slows you down. Also makes you dizzy. (Screenin väri vihreä?)
+
+Keltavahvero:	90		-
+
+Herkkutatti	40		-
+	
+Haaparousku	70		-
+
+Psilosieni	-70		Makes you fast.
+

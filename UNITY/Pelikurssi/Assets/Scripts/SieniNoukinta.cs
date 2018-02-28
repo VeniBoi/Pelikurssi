@@ -10,13 +10,23 @@ using UnityEngine.SceneManagement;
 
 public class SieniNoukinta : MonoBehaviour
 {
-
+	static public int Herkkutatti;					//Sienien noukinta määrät.
+	static public int Kärpässieni;
+	static public int Haaparousku;
+	static public int Psilosieni;
+	static public int Keltavahvero;
 	static public int score;
 	public Text countText;
 
 	// Use this for initialization
 	void Start()
 	{
+		Herkkutatti = 0;
+		Haaparousku = 0;
+		Kärpässieni = 0;				
+		Haaparousku = 0;
+		Psilosieni = 0;
+		Keltavahvero = 0;
 		score = 0;                       //Asetetaan pistemäärä nollaan.
 		SetCountText();
 	}
@@ -35,6 +45,7 @@ public class SieniNoukinta : MonoBehaviour
 			score = score + 10;								// Scoren lisääminen.
 			SetCountText();
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
+			Kärpässieni++;
 			
 
 		}
@@ -46,6 +57,7 @@ public class SieniNoukinta : MonoBehaviour
             score = score + 15;
 			SetCountText();
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
+			Keltavahvero++;
 		}
 
 		else if (other.gameObject.CompareTag("Haaparousku"))
@@ -55,6 +67,7 @@ public class SieniNoukinta : MonoBehaviour
             score = score + 30;
 			SetCountText();
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
+			Haaparousku++;
 		}
 
 		else if (other.gameObject.CompareTag("Herkkutatti"))
@@ -64,6 +77,7 @@ public class SieniNoukinta : MonoBehaviour
             score = score + 50;
 			SetCountText();
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
+			Herkkutatti++;
 		}
 
 		else if (other.gameObject.CompareTag("PsiloSieni"))
@@ -74,6 +88,7 @@ public class SieniNoukinta : MonoBehaviour
 			SetCountText();
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed += 10;
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
+			Psilosieni++;
 		}
 
 

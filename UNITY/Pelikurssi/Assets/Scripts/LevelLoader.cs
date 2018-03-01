@@ -41,4 +41,10 @@ public class LevelLoader : MonoBehaviour  //Tehdään funktioita joita UI:n butt
 			yield return null;
 		}
 	}
+
+	public void SetFullscreen(bool isFullscreen)
+	{
+		Debug.Log("FullScreen Pressed.");
+		Screen.fullScreen = isFullscreen;
+	}
 }

@@ -14,6 +14,7 @@ TagManager:
   - Cube2
   - Spawner
   - Kuolema
+  - Putous
   layers:
   - Default
   - TransparentFX

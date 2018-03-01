@@ -91,6 +91,7 @@ public class SieniNoukinta : MonoBehaviour
 			Psilosieni++;
 		}
 
+		
 
 	}
 
@@ -100,6 +101,8 @@ public class SieniNoukinta : MonoBehaviour
 
 
 	}
+
+
 
 	
 }

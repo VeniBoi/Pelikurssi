@@ -7,8 +7,8 @@ using System.Collections;
 public class ThirdPersonCamera : MonoBehaviour
 {
 
-    public bool lockCursor;
-    public float mouseSensitivity = 10;
+	public bool lockCursor;
+	public float mouseSensitivity = 5f;
     public Transform target;
     public float dstFromTarget = 2;
     public Vector2 pitchMinMax = new Vector2(-40, 85);
@@ -41,5 +41,10 @@ public class ThirdPersonCamera : MonoBehaviour
         transform.position = target.position - transform.forward * dstFromTarget;
 
     }
+
+	public void AdjustSensitivity (float newSpeed)
+	{
+		mouseSensitivity = newSpeed;
+	}
 
 }

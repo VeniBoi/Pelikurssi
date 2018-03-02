@@ -26,6 +26,7 @@ GameObject:
   - component: {fileID: 114041481116280316}
   - component: {fileID: 114228651480085846}
   - component: {fileID: 114819600529344110}
+  - component: {fileID: 82164261456716984}
   m_Layer: 0
   m_Name: MiinaKasa
   m_TagString: Untagged
@@ -87,6 +88,86 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1166283866605576}
   m_Mesh: {fileID: 4300000, guid: 71ff411e90f469c4b9c85fddfdb5290a, type: 3}
+--- !u!82 &82164261456716984
+AudioSource:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1166283866605576}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!95 &95253868453026968
 Animator:
   serializedVersion: 3
@@ -130,6 +211,8 @@ MonoBehaviour:
   OsumaEfekti: {fileID: 1552534671465258, guid: 2418668a803855d4b9fcc23ce5121e4c,
     type: 2}
   Mesh: {fileID: 1166283866605576}
+  "R\xE4j\xE4hdys": {fileID: 8300000, guid: 0a86a33c975d6e440889303562a525f6, type: 3}
+  Rajahdys: {fileID: 82164261456716984}
 --- !u!114 &114819600529344110
 MonoBehaviour:
   m_ObjectHideFlags: 1

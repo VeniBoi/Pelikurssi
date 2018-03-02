@@ -5,16 +5,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Audio;
 
 public class Miina : MonoBehaviour {
 
 	public GameObject OsumaEfekti;
 	public GameObject Mesh;
+	public AudioClip Räjähdys;
+	public AudioSource Rajahdys;
 	
 
 	// Use this for initialization
 	void Start () {
-		
+		Rajahdys.clip = Räjähdys;
 	}
 	
 	// Update is called once per frame
@@ -27,7 +30,8 @@ public class Miina : MonoBehaviour {
 	{
 		if (other.gameObject.CompareTag("Player"))
 		{
-			
+			Rajahdys.Play();
+			GameObject.Find("Alusta2").GetComponent<AudioSource>().enabled = false;
 			Instantiate(OsumaEfekti, transform.position, transform.rotation);
 			Debug.Log("PAM!");
 			Destroy(GameObject.Find("Pelaaja"));

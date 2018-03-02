@@ -15,6 +15,7 @@ TagManager:
   - Spawner
   - Kuolema
   - Putous
+  - EiSpawnaa
   layers:
   - Default
   - TransparentFX

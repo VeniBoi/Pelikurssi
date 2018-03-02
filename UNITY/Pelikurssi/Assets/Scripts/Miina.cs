@@ -30,8 +30,8 @@ public class Miina : MonoBehaviour {
 	{
 		if (other.gameObject.CompareTag("Player"))
 		{
-			Rajahdys.Play();
 			GameObject.Find("Alusta2").GetComponent<AudioSource>().enabled = false;
+			Rajahdys.Play();			
 			Instantiate(OsumaEfekti, transform.position, transform.rotation);
 			Debug.Log("PAM!");
 			Destroy(GameObject.Find("Pelaaja"));

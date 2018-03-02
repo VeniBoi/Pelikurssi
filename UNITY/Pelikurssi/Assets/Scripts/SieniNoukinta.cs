@@ -86,7 +86,7 @@ public class SieniNoukinta : MonoBehaviour
             Destroy(other.gameObject);
             score = score + -70;
 			SetCountText();
-			GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed += 10;
+			GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed *= 2f;
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 			Psilosieni++;
 		}

@@ -67,7 +67,7 @@ MonoBehaviour:
   spawnees:
   - {fileID: 1959840260173154, guid: e794d976b62df314bbddea45143404a1, type: 2}
   - {fileID: 1678516622033782, guid: f72bfdfa3c6a4264eaa0f5b9c53c0396, type: 2}
-  - {fileID: 1151371554982442, guid: 3e9d635901bb52840a6d29594d0cefb2, type: 2}
+  - {fileID: 1600415515475942, guid: 59c9e112c7de555459ac56b985fff6f4, type: 2}
   - {fileID: 1447463689454098, guid: aabc322ecb4f6014f99cbfb6e5ef4dca, type: 2}
   - {fileID: 1299428238165574, guid: 39ae1522f8fb7fd4d8a94f50f0d49f04, type: 2}
   spawnPos: {fileID: 4922363934027166}

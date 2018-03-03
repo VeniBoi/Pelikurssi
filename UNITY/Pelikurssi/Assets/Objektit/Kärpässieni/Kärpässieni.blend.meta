@@ -59,7 +59,9 @@ ModelImporter:
     400050: Upperleg_R
     2100000: K_rp_ssieni_MAT
     2300000: Cylinder
+    2300002: //RootNode
     3300000: Cylinder
+    3300002: //RootNode
     4300000: Cylinder
     7400000: Default Take
     7400002: Run2

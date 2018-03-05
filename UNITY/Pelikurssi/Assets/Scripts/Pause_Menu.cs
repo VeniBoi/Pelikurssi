@@ -12,6 +12,11 @@ public class Pause_Menu : MonoBehaviour {
 	static public bool GameIsPaused = false;
 	public AudioMixer audioMixer;
 	public GameObject pauseMenuUI;
+	public GameObject SieniMenuUI;
+	
+	public GameObject SieniKirja2;
+	
+	
 	
 	// Update is called once per frame
 	void Update () {
@@ -22,6 +27,7 @@ public class Pause_Menu : MonoBehaviour {
 				Cursor.lockState = CursorLockMode.Locked;  //Lukitaan kursori näyttöön ja piilotetaan se
 				Cursor.visible = false;
 				Resume();
+				SieniPois();
 			}
 			else
 			{
@@ -77,8 +83,41 @@ public class Pause_Menu : MonoBehaviour {
 	}
 
 	
+	public void SieniPois()				
+	{
+		SieniMenuUI.SetActive(false);
+		Time.timeScale = 1f;
+		GameIsPaused = false;
+		Cursor.lockState = CursorLockMode.Locked;  //Lukitaan kursori näyttöön ja piilotetaan se
+		Cursor.visible = false;
+	}
 
+	public void Pois()					//Laittaa sienimenunu pois ja avaa pausemenun
+	{
+		pauseMenuUI.SetActive(true);
+		SieniMenuUI.SetActive(false);
+	}
+
+	public void Kirja1()
+	{
+		pauseMenuUI.SetActive(true);
+		
+	}
+
+
+	public void Kirja2()
+	{
+		pauseMenuUI.SetActive(true);
+		SieniKirja2.SetActive(false);
+	}
+
+	public void Kirja2NuoliVas()
+	{
+		SieniKirja2.SetActive(false);
+		SieniMenuUI.SetActive(true);
+	}
 }
+
 
 
 

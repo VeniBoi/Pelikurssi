@@ -16,6 +16,7 @@ TagManager:
   - Kuolema
   - Putous
   - EiSpawnaa
+  - Waypoint
   layers:
   - Default
   - TransparentFX

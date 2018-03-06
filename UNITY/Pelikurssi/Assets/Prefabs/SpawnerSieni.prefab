@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4922363934027166}
   - component: {fileID: 65580890931753406}
-  - component: {fileID: 114153807642112864}
+  - component: {fileID: 114427552485191498}
   m_Layer: 0
   m_Name: SpawnerSieni
   m_TagString: Spawner
@@ -53,7 +53,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114153807642112864
+--- !u!114 &114427552485191498
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -61,13 +61,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1582262239366654}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcb700459f4cade4d9f0df5a8b32718b, type: 3}
+  m_Script: {fileID: 11500000, guid: 9c8cfc6bad99c254fac7037e96977f87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   spawnees:
   - {fileID: 1959840260173154, guid: e794d976b62df314bbddea45143404a1, type: 2}
   - {fileID: 1678516622033782, guid: f72bfdfa3c6a4264eaa0f5b9c53c0396, type: 2}
-  - {fileID: 1600415515475942, guid: 59c9e112c7de555459ac56b985fff6f4, type: 2}
   - {fileID: 1447463689454098, guid: aabc322ecb4f6014f99cbfb6e5ef4dca, type: 2}
+  - {fileID: 1600415515475942, guid: 59c9e112c7de555459ac56b985fff6f4, type: 2}
   - {fileID: 1299428238165574, guid: 39ae1522f8fb7fd4d8a94f50f0d49f04, type: 2}
   spawnPos: {fileID: 4922363934027166}

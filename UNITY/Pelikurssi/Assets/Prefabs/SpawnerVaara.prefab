@@ -65,5 +65,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnees:
-  - {fileID: 0}
+  - {fileID: 1711850404564460, guid: 90e5163124b30314896fff6d01ab00e0, type: 2}
   spawnPos: {fileID: 4479884339068110}

@@ -26,8 +26,9 @@ public class Pause_Menu : MonoBehaviour {
 			{
 				Cursor.lockState = CursorLockMode.Locked;  //Lukitaan kursori näyttöön ja piilotetaan se
 				Cursor.visible = false;
-				Resume();
 				SieniPois();
+				Kirja2();
+				Resume();
 			}
 			else
 			{

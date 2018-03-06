@@ -1,18 +1,10 @@
 ﻿//Spagettikoodi a'la Veni
 //Use at your own risk. :-D
-
 using UnityEngine;
 using System.Collections;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-
-
 
 public class PlayerController : MonoBehaviour
-
-
 {
-	
 
 	public float walkSpeed = 2;
 	public float runSpeed = 6;
@@ -29,9 +21,7 @@ public class PlayerController : MonoBehaviour
 	float currentSpeed;
 	float velocityY;
 
-
-
-	public Animator animator;
+	 public Animator animator;
 	Transform cameraT;
 	CharacterController controller;
 
@@ -40,9 +30,6 @@ public class PlayerController : MonoBehaviour
 		animator = GetComponent<Animator>();
 		cameraT = Camera.main.transform;
 		controller = GetComponent<CharacterController>();
-
-		
-
 	}
 
 	void Update()
@@ -54,9 +41,12 @@ public class PlayerController : MonoBehaviour
 
 		Move(inputDir, running);
 
-
+		if (Input.GetKeyDown(KeyCode.Space))
+		{
+			Jump();
+		}
 		// animator
-		float animationSpeedPercent = ((running) ? 1 : .5f) * inputDir.magnitude;
+		float animationSpeedPercent = ((running) ? currentSpeed / runSpeed : currentSpeed / walkSpeed * .5f);
 		animator.SetFloat("speedPercent", animationSpeedPercent, speedSmoothTime, Time.deltaTime);
 
 	}
@@ -85,6 +75,15 @@ public class PlayerController : MonoBehaviour
 
 	}
 
+	void Jump()
+	{
+		if (controller.isGrounded)
+		{
+			float jumpVelocity = Mathf.Sqrt(-2 * gravity * jumpHeight);
+			velocityY = jumpVelocity;
+		}
+	}
+
 	float GetModifiedSmoothTime(float smoothTime)
 	{
 		if (controller.isGrounded)
@@ -98,11 +97,6 @@ public class PlayerController : MonoBehaviour
 		}
 		return smoothTime / airControlPercent;
 	}
-
-	
-
-
-
 }
 
 

@@ -17,6 +17,8 @@ TagManager:
   - Putous
   - EiSpawnaa
   - Waypoint
+  - HaaparouskuPick
+  - KarpaPickup
   layers:
   - Default
   - TransparentFX

@@ -45,7 +45,7 @@ public class SieniNoukinta : MonoBehaviour
             Destroy(other.gameObject);                      // Sienen tuhoaminen kun siihen osuu.
 			score = score + -50;								// Scoren lisääminen.
 			SetCountText();
-			GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 0f;
+			GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 0.1f;
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 			StartCoroutine(SieniPysäytys());
 			Kärpässieni++;
@@ -59,7 +59,7 @@ public class SieniNoukinta : MonoBehaviour
             Destroy(other.gameObject);
             score = score + 90;
 			SetCountText();
-			GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 0f;
+			GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 0.1f;
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 			StartCoroutine(SieniPysäytys());
 			Keltavahvero++;
@@ -71,7 +71,7 @@ public class SieniNoukinta : MonoBehaviour
             Destroy(other.gameObject);
             score = score + 70;
 			SetCountText();
-			GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 0f;
+			GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 0.1f;
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 			StartCoroutine(SieniPysäytys());
 			Haaparousku++;
@@ -83,10 +83,9 @@ public class SieniNoukinta : MonoBehaviour
             Destroy(other.gameObject);
             score = score + 40;
 			SetCountText();
-			GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 0f;
+			GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 0.1f;
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
-			StartCoroutine(SieniPysäytys());
-			
+			StartCoroutine(SieniPysäytys());		
 			Herkkutatti++;
 		}
 

@@ -19,6 +19,10 @@ public class SieniNoukinta : MonoBehaviour
 	static public int score;
 	public Text countText;
 	public Animator anim;
+	
+
+	
+	
 
 	// Use this for initialization
 	void Start()
@@ -31,6 +35,9 @@ public class SieniNoukinta : MonoBehaviour
 		Keltavahvero = 0;
 		score = 0;                       //Asetetaan pistemäärä nollaan.
 		SetCountText();
+
+		
+
 	}
 
 	// Update is called once per frame

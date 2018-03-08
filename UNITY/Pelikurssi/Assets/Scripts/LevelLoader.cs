@@ -37,6 +37,7 @@ public class LevelLoader : MonoBehaviour  //Tehdään funktioita joita UI:n butt
 		{
 			float progress = Mathf.Clamp01(operation.progress / .9f);
 			slider.value = progress;
+			Time.timeScale = 0f;
 
 			yield return null;
 		}

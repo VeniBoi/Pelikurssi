@@ -11,6 +11,9 @@ using TMPro;
 
 public class SieniNoukinta : MonoBehaviour
 {
+	static public int Haavapunikkitatti;
+	static public int Kangasrousku;
+	static public int Isohapero;
 	static public int Herkkutatti;					//Sienien noukinta määrät.
 	static public int Kärpässieni;
 	static public int Haaparousku;
@@ -27,6 +30,9 @@ public class SieniNoukinta : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+		Haavapunikkitatti = 0;
+		Isohapero = 0;
+		Kangasrousku = 0;
 		Herkkutatti = 0;
 		Haaparousku = 0;
 		Kärpässieni = 0;				
@@ -127,7 +133,54 @@ public class SieniNoukinta : MonoBehaviour
 			StartCoroutine(SieniPysäytysPsilo());
 		}
 
-		
+		else if (other.gameObject.CompareTag("Kangasrousku"))
+		{
+			GameObject.Find("SieniPickupKangas").GetComponent<Text>().enabled = true;
+			GameObject.Find("SieniPickupKangas").GetComponent<Animator>().enabled = true;
+
+			Debug.Log("Herkkutatti noukittu!");
+			Destroy(other.gameObject);
+			score = score + 40;
+			SetCountText();
+			GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 0.1f;
+			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
+			StartCoroutine(SieniPysäytysKangas());
+			Kangasrousku++;
+
+		}
+
+		else if (other.gameObject.CompareTag("Isohapero"))
+		{
+			GameObject.Find("SieniPickupIso").GetComponent<Text>().enabled = true;
+			GameObject.Find("SieniPickupIso").GetComponent<Animator>().enabled = true;
+
+			Debug.Log("Herkkutatti noukittu!");
+			Destroy(other.gameObject);
+			score = score + 35;
+			SetCountText();
+			GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 0.1f;
+			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
+			StartCoroutine(SieniPysäytysIso());
+			Isohapero++;
+
+		}
+
+		else if (other.gameObject.CompareTag("Haavapunikkitatti"))
+		{
+			GameObject.Find("SieniPickupHaava").GetComponent<Text>().enabled = true;
+			GameObject.Find("SieniPickupHaava").GetComponent<Animator>().enabled = true;
+
+			Debug.Log("Herkkutatti noukittu!");
+			Destroy(other.gameObject);
+			score = score + 65;
+			SetCountText();
+			GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 0.1f;
+			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
+			StartCoroutine(SieniPysäytysHaava());
+			Haavapunikkitatti++;
+
+		}
+
 
 	}
 
@@ -195,6 +248,42 @@ public class SieniNoukinta : MonoBehaviour
 		anim.Play("SieniAnimation", 0, 0);
 		GameObject.Find("SieniPickupKelta").GetComponent<Text>().enabled = false;
 		GameObject.Find("SieniPickupKelta").GetComponent<Animator>().enabled = false;
+
+	}
+
+	IEnumerator SieniPysäytysKangas()        //Pysäyttää hahmon hetkeksi kun poimii sienen.
+	{
+		yield return new WaitForSeconds(0.2f);
+		GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 8f;
+		yield return new WaitForSeconds(1.6f);
+
+		anim.Play("SieniAnimation", 0, 0);
+		GameObject.Find("SieniPickupKangas").GetComponent<Text>().enabled = false;
+		GameObject.Find("SieniPickupKangas").GetComponent<Animator>().enabled = false;
+
+	}
+
+	IEnumerator SieniPysäytysHaava()        //Pysäyttää hahmon hetkeksi kun poimii sienen.
+	{
+		yield return new WaitForSeconds(0.2f);
+		GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 8f;
+		yield return new WaitForSeconds(1.6f);
+
+		anim.Play("SieniAnimation", 0, 0);
+		GameObject.Find("SieniPickupHaava").GetComponent<Text>().enabled = false;
+		GameObject.Find("SieniPickupHaava").GetComponent<Animator>().enabled = false;
+
+	}
+
+	IEnumerator SieniPysäytysIso()        //Pysäyttää hahmon hetkeksi kun poimii sienen.
+	{
+		yield return new WaitForSeconds(0.2f);
+		GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 8f;
+		yield return new WaitForSeconds(1.6f);
+
+		anim.Play("SieniAnimation", 0, 0);
+		GameObject.Find("SieniPickupIso").GetComponent<Text>().enabled = false;
+		GameObject.Find("SieniPickupIso").GetComponent<Animator>().enabled = false;
 
 	}
 

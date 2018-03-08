@@ -19,6 +19,10 @@ TagManager:
   - Waypoint
   - HaaparouskuPick
   - KarpaPickup
+  - Haavapunikkitatti
+  - Isohapero
+  - Kangasrousku
+  - KangasPick
   layers:
   - Default
   - TransparentFX

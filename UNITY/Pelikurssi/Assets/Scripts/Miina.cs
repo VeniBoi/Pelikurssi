@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class Miina : MonoBehaviour {
 
@@ -56,8 +57,9 @@ public class Miina : MonoBehaviour {
 		Debug.Log("Toimiiko odotus?");
 		yield return new WaitForSeconds(3.5f);
 		Debug.Log("Loppu ladattu");
+		GameObject.Find("PommiText").GetComponent<Text>().enabled = true;
 		SceneManager.LoadScene("Loppu");
-		
+
 
 	}
 	

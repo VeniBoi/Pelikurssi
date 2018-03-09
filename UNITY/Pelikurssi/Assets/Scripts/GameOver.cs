@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameOver : MonoBehaviour {
 
@@ -18,6 +19,10 @@ public class GameOver : MonoBehaviour {
 	public void Menu()
 	{
 		Debug.Log("Menu!");
+		GameObject.Find("PommiText").GetComponent<Text>().enabled = false;
+		GameObject.Find("VesiText").GetComponent<Text>().enabled = false;
+		GameObject.Find("NuotioText").GetComponent<Text>().enabled = false;
+		GameObject.Find("MyllyText").GetComponent<Text>().enabled = false;
 		SceneManager.LoadScene("Menu");
 
 	}

@@ -10,3 +10,11 @@ X Haaparousku	70		-
 
 Psilosieni	-70		Makes you fast.
 
+KangasRousku	40		-
+
+Isohapero	35		-
+
+Haavapunikk.	65		-
+
+
+

@@ -11,6 +11,7 @@ using TMPro;
 
 public class SieniNoukinta : MonoBehaviour
 {
+	public GameObject Varoitus;
 	static public int Haavapunikkitatti;
 	static public int Kangasrousku;
 	static public int Isohapero;
@@ -20,8 +21,11 @@ public class SieniNoukinta : MonoBehaviour
 	static public int Psilosieni;
 	static public int Keltavahvero;
 	static public int score;
+	static public int multiplier;
 	public Text countText;
 	public Animator anim;
+	public GameObject Siluetti;
+	
 	
 
 	
@@ -40,6 +44,7 @@ public class SieniNoukinta : MonoBehaviour
 		Psilosieni = 0;
 		Keltavahvero = 0;
 		score = 0;                       //Asetetaan pistemäärä nollaan.
+		multiplier = 0;
 		SetCountText();
 
 		
@@ -55,7 +60,13 @@ public class SieniNoukinta : MonoBehaviour
 	{
 		if (other.gameObject.CompareTag("Karpassieni"))          
 		{
-			GameObject.Find("SieniPickupKarpa").GetComponent<Text>().enabled = true;
+			Cursor.lockState = CursorLockMode.None;  //Lukitaan kursori näyttöön ja piilotetaan se
+			Cursor.visible = true;
+			Varoitus.SetActive(true);
+			Time.timeScale = 0f;
+
+
+			/*GameObject.Find("SieniPickupKarpa").GetComponent<Text>().enabled = true;
 			GameObject.Find("SieniPickupKarpa").GetComponent<Animator>().enabled = true;
 
 			Debug.Log("Kärpässieni noukittu!");
@@ -66,7 +77,7 @@ public class SieniNoukinta : MonoBehaviour
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 			StartCoroutine(SieniPysäytysKarpa());
 			Kärpässieni++;
-			
+			*/
 
 		}
 
@@ -106,6 +117,7 @@ public class SieniNoukinta : MonoBehaviour
 		{
 			GameObject.Find("SieniPickupHerkku").GetComponent<Text>().enabled = true;
 			GameObject.Find("SieniPickupHerkku").GetComponent<Animator>().enabled = true;
+			
 
 			Debug.Log("Herkkutatti noukittu!");
             Destroy(other.gameObject);
@@ -115,7 +127,10 @@ public class SieniNoukinta : MonoBehaviour
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 			StartCoroutine(SieniPysäytysHerkku());
 			Herkkutatti++;
+			Siluetti.GetComponent<Image>().enabled = false;
 			
+			
+
 		}
 
 		else if (other.gameObject.CompareTag("PsiloSieni"))

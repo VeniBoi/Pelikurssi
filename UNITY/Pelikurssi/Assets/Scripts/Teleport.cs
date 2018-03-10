@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Teleport : MonoBehaviour {
-	
+
+	private void Start()
+	{
+		
+	}
+
 	// Update is called once per frame
 	void Update () {
 		

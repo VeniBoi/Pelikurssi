@@ -4,9 +4,22 @@ using UnityEngine;
 
 public class KuolemaCanvas : MonoBehaviour {
 
+	public static KuolemaCanvas instance { get; private set; }
+
+	public int value;
+
 	// Use this for initialization
-	void Start () {
-		DontDestroyOnLoad(transform.gameObject);
+	private void Awake () {
+		if (instance == null)
+		{
+			instance = this;
+			DontDestroyOnLoad(gameObject);
+		}
+		else
+		{
+			Destroy(gameObject);
+		}
+
 	}
 	
 	// Update is called once per frame

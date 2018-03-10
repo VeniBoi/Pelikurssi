@@ -14,10 +14,15 @@ public class Pause_Menu : MonoBehaviour {
 	public GameObject pauseMenuUI;
 	public GameObject SieniMenuUI;
 	
+	
 	public GameObject SieniKirja2;
-	
-	
-	
+
+	private void Start()
+	{
+		
+	}
+
+
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.Escape))
@@ -32,7 +37,7 @@ public class Pause_Menu : MonoBehaviour {
 			}
 			else
 			{
-				Cursor.lockState = CursorLockMode.Confined;  //Lukitaan kursori näyttöön ja piilotetaan se
+				Cursor.lockState = CursorLockMode.Confined;  
 				Cursor.visible = true;
 				Pause();
 			}
@@ -117,6 +122,8 @@ public class Pause_Menu : MonoBehaviour {
 		SieniKirja2.SetActive(false);
 		SieniMenuUI.SetActive(true);
 	}
+
+	
 }
 
 

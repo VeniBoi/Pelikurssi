@@ -25,11 +25,12 @@ public class SieniNoukinta : MonoBehaviour
 	public Text countText;
 	public Animator anim;
 	public GameObject Siluetti;
-	
-	
+	static public bool onTrue = false;
 
-	
-	
+
+
+
+
 
 	// Use this for initialization
 	void Start()
@@ -56,6 +57,15 @@ public class SieniNoukinta : MonoBehaviour
 	{
 	}
 
+	private void OnTriggerStay(Collider collider)
+	{
+		if (onTrue == true && collider.gameObject.CompareTag("Karpassieni")) //Tuhoaa sienen ja soittaa animaation jos painetaan yes.
+		{
+			Destroy(collider.gameObject);
+			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
+		}
+	}
+
 	void OnTriggerEnter(Collider other )
 	{
 		if (other.gameObject.CompareTag("Karpassieni"))          
@@ -64,6 +74,8 @@ public class SieniNoukinta : MonoBehaviour
 			Cursor.visible = true;
 			Varoitus.SetActive(true);
 			Time.timeScale = 0f;
+
+			
 
 
 			/*GameObject.Find("SieniPickupKarpa").GetComponent<Text>().enabled = true;
@@ -199,7 +211,7 @@ public class SieniNoukinta : MonoBehaviour
 
 	}
 
-	void SetCountText()
+	public void SetCountText()
 	{
 		countText.text = "Score: " + score;
 

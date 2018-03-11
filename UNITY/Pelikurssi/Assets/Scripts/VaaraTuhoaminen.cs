@@ -1,8 +1,13 @@
-﻿using System.Collections;
+﻿//Spagettikoodi a'la Veni
+//Use at your own risk. :-D
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class VaaraTuhoaminen : MonoBehaviour {
+
+	
 
 	// Use this for initialization
 	void Start () {
@@ -10,9 +15,7 @@ public class VaaraTuhoaminen : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update () {
-		
-	}
+	
 
 
 

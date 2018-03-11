@@ -9,10 +9,12 @@ using UnityEngine.UI;
 public class FinalScore : MonoBehaviour {
 
 	public Text scoreText;
+	SieniNoukinta testi;
 
 	// Use this for initialization
 	void Start () {
 		scoreText.text = "FINAL SCORE: " + SieniNoukinta.score;  //Päätetään mitä teksti sanoo ja haetaan score toisesta scriptistä.
+		
 	}
 	
 	// Update is called once per frame

@@ -24,7 +24,10 @@ public class SieniNoukinta : MonoBehaviour
 	static public int multiplier;
 	public Text countText;
 	public Animator anim;
-	public GameObject Siluetti;
+	public GameObject SiluettiPenny;
+	public GameObject SiluettiFly;
+	public GameObject SiluettiChan;
+	public GameObject SiluettiLact;
 	static public bool onTrue = false;
 
 
@@ -63,6 +66,7 @@ public class SieniNoukinta : MonoBehaviour
 		{
 			Destroy(collider.gameObject);
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
+			SiluettiFly.GetComponent<Image>().enabled = false;
 		}
 	}
 
@@ -105,6 +109,7 @@ public class SieniNoukinta : MonoBehaviour
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 0.1f;
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 			StartCoroutine(SieniPysäytysKelta());
+			SiluettiChan.GetComponent<Image>().enabled = false;
 			Keltavahvero++;
 		}
 
@@ -120,6 +125,7 @@ public class SieniNoukinta : MonoBehaviour
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 0.1f;
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 			StartCoroutine(SieniPysäytysHaapa());
+			SiluettiLact.GetComponent<Image>().enabled = false;
 			Haaparousku++;
 			
 
@@ -139,7 +145,7 @@ public class SieniNoukinta : MonoBehaviour
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 			StartCoroutine(SieniPysäytysHerkku());
 			Herkkutatti++;
-			Siluetti.GetComponent<Image>().enabled = false;
+			SiluettiPenny.GetComponent<Image>().enabled = false;
 			
 			
 

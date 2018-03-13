@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class KuolemaNuotio : MonoBehaviour
 {
-
+	public GameObject Paneeli;
 	// Use this for initialization
 	void Start()
 	{
@@ -28,9 +28,13 @@ public class KuolemaNuotio : MonoBehaviour
 		if (other.gameObject.CompareTag("Player"))
 		{
 			Debug.Log("Loppu ladattu.");
+			GameObject.Find("GameOverPanel").SetActive(true);
+			Time.timeScale = 0f;
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
 
-			GameObject.Find("NuotioText").GetComponent<Text>().enabled = true;
-			SceneManager.LoadScene("Loppu");
+			//GameObject.Find("NuotioText").GetComponent<Text>().enabled = true;
+			//SceneManager.LoadScene("Loppu");
 		}
 
 	}

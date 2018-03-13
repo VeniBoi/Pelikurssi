@@ -6,10 +6,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.PostProcessing;
 
 public class KuolemaPommi : MonoBehaviour
 {
-
+	
+	public PostProcessingProfile otherProfile;
+	private GameObject testi;
+	public GameObject Prefab;
 	// Use this for initialization
 	void Start()
 	{
@@ -19,7 +23,7 @@ public class KuolemaPommi : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-
+		
 
 	}
 
@@ -27,11 +31,31 @@ public class KuolemaPommi : MonoBehaviour
 	{                                                   // niin ladataan uusi  scene (loppu).
 		if (other.gameObject.CompareTag("Player"))
 		{
-			Debug.Log("Loppu ladattu.");
 
-			GameObject.Find("PommiText").GetComponent<Text>().enabled = true;
-			SceneManager.LoadScene("Loppu");
+			StartCoroutine(Pommi());
+			//GameObject.Find("PommiText").GetComponent<Text>().enabled = true;
+			//SceneManager.LoadScene("Loppu");
 		}
+
+	}
+
+	 IEnumerator Pommi()
+	{
+		Debug.Log("Loppu ladattu.");
+
+		yield return new WaitForSeconds(3);
+		
+		GameObject.Find("Main Camera").GetComponent<PostProcessingBehaviour>().profile = otherProfile;
+		Time.timeScale = 0f;
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
+
+		testi = Instantiate(Prefab, transform.position, Quaternion.identity) as GameObject;
+
+		Canvas canvas = GameObject.Find("PauseCanvas").GetComponent<Canvas>();
+
+		testi.transform.SetParent(canvas.transform, false);
+
 
 	}
 }

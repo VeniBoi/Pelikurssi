@@ -9,7 +9,7 @@ using UnityEngine.UI;
 
 public class KuolemaMylly : MonoBehaviour
 {
-
+	public GameObject Paneeli;
 	// Use this for initialization
 	void Start()
 	{
@@ -29,8 +29,14 @@ public class KuolemaMylly : MonoBehaviour
 		{
 			Debug.Log("Loppu ladattu.");
 
-			GameObject.Find("MyllyText").GetComponent<Text>().enabled = true;
-			SceneManager.LoadScene("Loppu");
+
+			GameObject.Find("GameOverPanel").SetActive(true);
+			Time.timeScale = 0f;
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
+
+			//GameObject.Find("MyllyText").GetComponent<Text>().enabled = true;
+			//SceneManager.LoadScene("Loppu");
 		}
 
 	}

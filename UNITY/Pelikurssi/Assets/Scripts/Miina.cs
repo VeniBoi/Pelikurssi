@@ -7,6 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Audio;
 using UnityEngine.UI;
+using UnityEngine.PostProcessing;
 
 public class Miina : MonoBehaviour {
 
@@ -14,7 +15,8 @@ public class Miina : MonoBehaviour {
 	public GameObject Mesh;
 	public AudioClip Räjähdys;
 	public AudioSource Rajahdys;
-	
+	public GameObject Paneeli;
+
 
 	// Use this for initialization
 	void Start () {
@@ -58,7 +60,11 @@ public class Miina : MonoBehaviour {
 		yield return new WaitForSeconds(3.5f);
 		Debug.Log("Loppu ladattu");
 		GameObject.Find("PommiText").GetComponent<Text>().enabled = true;
-		SceneManager.LoadScene("Loppu");
+		Paneeli.SetActive(true);
+		Time.timeScale = 0f;
+		Cursor.lockState = CursorLockMode.None;
+		Cursor.visible = true;
+
 
 
 	}

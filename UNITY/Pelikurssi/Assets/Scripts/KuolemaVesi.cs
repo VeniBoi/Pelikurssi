@@ -6,8 +6,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.PostProcessing;
 
 public class KuolemaVesi : MonoBehaviour {
+
+	public GameObject Paneeli;
+	public PostProcessingProfile otherProfile;
 
 	// Use this for initialization
 	void Start () {
@@ -26,8 +30,15 @@ public class KuolemaVesi : MonoBehaviour {
 		{
 			Debug.Log("Loppu ladattu.");
 
-			GameObject.Find("VesiText").GetComponent<Text>().enabled = true;
-			SceneManager.LoadScene("Loppu");
+			GameObject.Find("Main Camera").GetComponent<PostProcessingBehaviour>().profile = otherProfile;
+			Paneeli.SetActive(true);
+			Time.timeScale = 0f;
+			Cursor.lockState = CursorLockMode.None;
+			Cursor.visible = true;
+
+
+			//GameObject.Find("VesiText").GetComponent<Text>().enabled = true;
+			//SceneManager.LoadScene("Loppu");
 		}
 
 	}

@@ -123,6 +123,12 @@ public class Pause_Menu : MonoBehaviour {
 		SieniMenuUI.SetActive(true);
 	}
 
+	public void Continue()
+	{
+		SceneManager.LoadScene("Loppu");
+		Time.timeScale = 1f;
+	}
+
 	
 }
 

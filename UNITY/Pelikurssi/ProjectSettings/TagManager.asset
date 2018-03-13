@@ -23,6 +23,7 @@ TagManager:
   - Isohapero
   - Kangasrousku
   - KangasPick
+  - GameOver
   layers:
   - Default
   - TransparentFX

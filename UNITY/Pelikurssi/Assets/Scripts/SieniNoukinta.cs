@@ -67,6 +67,7 @@ public class SieniNoukinta : MonoBehaviour
 			Destroy(collider.gameObject);
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 			SiluettiFly.GetComponent<Image>().enabled = false;
+			onTrue = false;
 		}
 	}
 

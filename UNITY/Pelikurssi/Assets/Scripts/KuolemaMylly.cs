@@ -6,10 +6,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.PostProcessing;
 
 public class KuolemaMylly : MonoBehaviour
 {
+
 	public GameObject Paneeli;
+	public PostProcessingProfile otherProfile;
+
 	// Use this for initialization
 	void Start()
 	{
@@ -28,14 +32,16 @@ public class KuolemaMylly : MonoBehaviour
 		if (other.gameObject.CompareTag("Player"))
 		{
 			Debug.Log("Loppu ladattu.");
+			GameObject.Find("ScoreText").GetComponent<Text>().enabled = false;
 
-
-			GameObject.Find("GameOverPanel").SetActive(true);
+			GameObject.Find("Main Camera").GetComponent<PostProcessingBehaviour>().profile = otherProfile;
+			Paneeli.SetActive(true);
 			Time.timeScale = 0f;
 			Cursor.lockState = CursorLockMode.None;
 			Cursor.visible = true;
 
-			//GameObject.Find("MyllyText").GetComponent<Text>().enabled = true;
+
+			//GameObject.Find("VesiText").GetComponent<Text>().enabled = true;
 			//SceneManager.LoadScene("Loppu");
 		}
 

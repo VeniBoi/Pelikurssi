@@ -11,6 +11,8 @@ public class Kysymys : MonoBehaviour
 	public GameObject[] spawnees;
 	public Transform spawnPos;
 	private GameObject testi;
+	public GameObject Dialogi1;
+	public GameObject Dialogi2;
 
 	
 	int randomInt;
@@ -33,12 +35,13 @@ public class Kysymys : MonoBehaviour
 		{
 			Debug.Log("Paneeli spawnattu");
 			randomSpawner();
+			PoistaDialogi();
 		}
 	}
 
 	//Instantiate(spawnees[randomInt], transform.position, Quaternion.identity);
 
-
+	
 
 	void randomSpawner()                                        //Ottaa random sienen sille asetetusta listasta
 	{                                                           // Objektin voi asettaa listaan pelin editorista (public).
@@ -51,5 +54,11 @@ public class Kysymys : MonoBehaviour
 		
 	}
 
+	void PoistaDialogi()
+	{
+		Dialogi1.SetActive(false);
+		Dialogi2.SetActive(false);
+
+	}
 
 }

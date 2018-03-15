@@ -42,6 +42,7 @@ public class KuolemaPommi : MonoBehaviour
 	 IEnumerator Pommi()
 	{
 		Debug.Log("Loppu ladattu.");
+		GameObject.Find("ScoreText").GetComponent<Text>().enabled = false;
 
 		yield return new WaitForSeconds(3);
 		

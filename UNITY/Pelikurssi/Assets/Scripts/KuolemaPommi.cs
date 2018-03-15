@@ -17,6 +17,8 @@ public class KuolemaPommi : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+		GameObject pisteet = GameObject.Find("SieniNoukinta");
+		SieniNoukinta sieninoukinta = pisteet.GetComponent<SieniNoukinta>();
 
 	}
 
@@ -31,7 +33,7 @@ public class KuolemaPommi : MonoBehaviour
 	{                                                   // niin ladataan uusi  scene (loppu).
 		if (other.gameObject.CompareTag("Player"))
 		{
-
+			SieniNoukinta.updateTimer = false;
 			StartCoroutine(Pommi());
 			//GameObject.Find("PommiText").GetComponent<Text>().enabled = true;
 			//SceneManager.LoadScene("Loppu");

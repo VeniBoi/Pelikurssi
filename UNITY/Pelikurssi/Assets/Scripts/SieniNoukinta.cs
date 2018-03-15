@@ -31,7 +31,8 @@ public class SieniNoukinta : MonoBehaviour
 	static public bool onTrue = false;
 	static public float levelTimer;
 	static public bool updateTimer = true;
-	static public int timerinseconds = 0;
+	static public float minutes;
+	
 
 
 
@@ -65,8 +66,10 @@ public class SieniNoukinta : MonoBehaviour
 		if (updateTimer == true)
 		{
 			levelTimer += Time.deltaTime*1;
+
 		}
-		
+
+		minutes = levelTimer / 60;
 
 	}
 

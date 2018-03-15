@@ -34,8 +34,8 @@ public class FinalScore : MonoBehaviour {
 		Lactarius.text = SieniNoukinta.Haaparousku + " LACTARIUS TRIVIALIS";
 
 
-		float aika = SieniNoukinta.levelTimer;		//Haetaan aika sieninoukinta koodista ja näytetään se.
-		Time.text = aika.ToString("f2") + " seconds";
+		float aika = SieniNoukinta.minutes;		//Haetaan aika sieninoukinta koodista ja näytetään se.
+		Time.text = aika.ToString("f2") + " minutes";
 	}
 	
 	// Update is called once per frame

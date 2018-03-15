@@ -39,7 +39,7 @@ public class KuolemaNuotio : MonoBehaviour
 			Cursor.lockState = CursorLockMode.None;
 			Cursor.visible = true;
 
-			
+			SieniNoukinta.updateTimer = false;
 
 			//GameObject.Find("NuotioText").GetComponent<Text>().enabled = true;
 			//SceneManager.LoadScene("Loppu");

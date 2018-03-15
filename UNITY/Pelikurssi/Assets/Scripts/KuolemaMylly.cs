@@ -40,7 +40,7 @@ public class KuolemaMylly : MonoBehaviour
 			Cursor.lockState = CursorLockMode.None;
 			Cursor.visible = true;
 
-
+			SieniNoukinta.updateTimer = false;
 			//GameObject.Find("VesiText").GetComponent<Text>().enabled = true;
 			//SceneManager.LoadScene("Loppu");
 		}

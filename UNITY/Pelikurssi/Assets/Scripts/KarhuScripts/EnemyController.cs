@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour {
 
 		target = PlayerManager.instance.player.transform;
 		agent = GetComponent<NavMeshAgent>();
+		
 	}
 	
 	// Update is called once per frame
@@ -26,6 +27,8 @@ public class EnemyController : MonoBehaviour {
 		if (distance <= lookRadius)
 		{
 			agent.SetDestination(target.position);
+			agent.speed = 8.3f;
+			StartCoroutine(stop());
 		}
 	}
 
@@ -33,5 +36,12 @@ public class EnemyController : MonoBehaviour {
 	{
 		Gizmos.color = Color.red;
 		Gizmos.DrawWireSphere(transform.position, lookRadius);
+	}
+
+	IEnumerator stop()
+	{
+		yield return new WaitForSeconds(17);
+		agent.speed = 2;
+
 	}
 }

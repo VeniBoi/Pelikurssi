@@ -107,4 +107,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01aa67ec2f152894db19a3d69d9500fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _connectivityRadius: 100
+  _connectivityRadius: 20

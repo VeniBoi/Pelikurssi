@@ -9,6 +9,7 @@ public class EnemyController : MonoBehaviour {
 
 	Transform target;
 	NavMeshAgent agent;
+	
 
 
 	// Use this for initialization
@@ -16,6 +17,7 @@ public class EnemyController : MonoBehaviour {
 
 		target = PlayerManager.instance.player.transform;
 		agent = GetComponent<NavMeshAgent>();
+		
 		
 	}
 	
@@ -26,8 +28,10 @@ public class EnemyController : MonoBehaviour {
 
 		if (distance <= lookRadius)
 		{
+			
 			agent.SetDestination(target.position);
 			agent.speed = 8.3f;
+			gameObject.GetComponent<NPCSimplePatrol>().enabled = false;
 			StartCoroutine(stop());
 		}
 	}
@@ -42,6 +46,7 @@ public class EnemyController : MonoBehaviour {
 	{
 		yield return new WaitForSeconds(17);
 		agent.speed = 2;
+		gameObject.GetComponent<NPCSimplePatrol>().enabled = true;
 
 	}
 }

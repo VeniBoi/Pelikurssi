@@ -10,14 +10,17 @@ public class KarhuSpawner : MonoBehaviour
 {
 	public GameObject[] spawnees;
 	public Transform spawnPos;
-
+	
+	
 
 	int randomInt;
 
 	// Use this for initialization
 	void Start()
 	{
-		InvokeRepeating("randomSpawner", 1f, Random.Range(30f, 60f));
+		InvokeRepeating("randomSpawner", 1f, Random.Range(60, 90));
+		
+		
 	}
 	void Update()
 	{
@@ -42,12 +45,13 @@ public class KarhuSpawner : MonoBehaviour
 
 
 
-	void randomSpawner()                                        //Ottaa random sienen sille asetetusta listasta
-	{                                                           // Objektin voi asettaa listaan pelin editorista (public).
+	void randomSpawner()                                        //Ottaa random objektinsille asetetusta listasta
+	{                                                           // Objektin voi asettaa listaan unityn editorista (public).
 		randomInt = Random.Range(0, spawnees.Length);
 		Instantiate(spawnees[randomInt], spawnPos.position, Quaternion.Euler(270, 0, 0));
 	}
 
+	
 
 }
 

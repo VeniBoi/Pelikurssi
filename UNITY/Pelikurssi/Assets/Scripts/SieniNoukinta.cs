@@ -65,7 +65,7 @@ public class SieniNoukinta : MonoBehaviour
 		SetCountText();
 
 		levelTimer = 0;
-
+		
 	}
 
 	// Update is called once per frame

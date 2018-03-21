@@ -922,6 +922,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spawnees:
   - {fileID: 1946579012971122, guid: de62c1de611604f449fc490921a26c1c, type: 2}
+  - {fileID: 1830778677708558, guid: e73918de348fd10459222bffd7bb7e98, type: 2}
+  - {fileID: 1130443051189080, guid: 18d38df96b1b8dd44931b70e730d5b37, type: 2}
+  - {fileID: 1830257393817780, guid: 80b1f54c343c91d44badc5c89a75d726, type: 2}
+  - {fileID: 1918501295042392, guid: 279da9582a31fef40be4820f50bde062, type: 2}
   spawnPos: {fileID: 2038065485}
   Dialogi1: {fileID: 107268396}
   Dialogi2: {fileID: 942496877}

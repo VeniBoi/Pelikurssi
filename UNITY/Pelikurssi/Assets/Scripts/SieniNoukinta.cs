@@ -12,6 +12,7 @@ using TMPro;
 public class SieniNoukinta : MonoBehaviour
 {
 	public GameObject Varoitus;
+	static public int kavalakarpassieni;
 	static public int Haavapunikkitatti;
 	static public int Kangasrousku;
 	static public int Isohapero;
@@ -78,17 +79,47 @@ public class SieniNoukinta : MonoBehaviour
 		if (onTrue == true && collider.gameObject.CompareTag("Karpassieni")) //Tuhoaa sienen ja soittaa animaation jos painetaan yes.
 		{
 			Destroy(collider.gameObject);
+			GameObject.Find("SieniPickupKarpa").GetComponent<Text>().enabled = true;
+			GameObject.Find("SieniPickupKarpa").GetComponent<Animator>().enabled = true;
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 			SiluettiFly.GetComponent<Image>().enabled = false;
+			StartCoroutine(SieniPysäytysKarpa());
 			Kärpässieni++;
 			onTrue = false;
 		}
+
+		else if (onTrue == true && collider.gameObject.CompareTag("kavalakarpassieni")) //Tuhoaa sienen ja soittaa animaation jos painetaan yes.
+		{
+			Destroy(collider.gameObject);
+			GameObject.Find("SieniPickupKavala").GetComponent<Text>().enabled = true;
+			GameObject.Find("SieniPickupKavala").GetComponent<Animator>().enabled = true;
+			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
+			SiluettiFly.GetComponent<Image>().enabled = false;
+			StartCoroutine(SieniPysäytysKavala());
+			kavalakarpassieni++;
+			onTrue = false;
+		}
+
 	}
+
+
 
 	void OnTriggerEnter(Collider other )
 	{
-		if (other.gameObject.CompareTag("Karpassieni"))          
+
+		if (other.gameObject.CompareTag("kavalakarpassieni"))
 		{
+			Debug.Log("Kavalaan osuttu");
+			Cursor.lockState = CursorLockMode.None;  //Lukitaan kursori näyttöön ja piilotetaan se
+			Cursor.visible = true;
+			Varoitus.SetActive(true);
+			Time.timeScale = 0f;
+			
+		}
+
+
+		else if (other.gameObject.CompareTag("Karpassieni")) {        
+		
 			Cursor.lockState = CursorLockMode.None;  //Lukitaan kursori näyttöön ja piilotetaan se
 			Cursor.visible = true;
 			Varoitus.SetActive(true);
@@ -332,6 +363,18 @@ public class SieniNoukinta : MonoBehaviour
 		anim.Play("SieniAnimation", 0, 0);
 		GameObject.Find("SieniPickupIso").GetComponent<Text>().enabled = false;
 		GameObject.Find("SieniPickupIso").GetComponent<Animator>().enabled = false;
+
+	}
+
+	IEnumerator SieniPysäytysKavala()        //Pysäyttää hahmon hetkeksi kun poimii sienen.
+	{
+		yield return new WaitForSeconds(0.2f);
+		GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 8f;
+		yield return new WaitForSeconds(1.6f);
+
+		anim.Play("SieniAnimation", 0, 0);
+		GameObject.Find("SieniPickupKavala").GetComponent<Text>().enabled = false;
+		GameObject.Find("SieniPickupKavala").GetComponent<Animator>().enabled = false;
 
 	}
 

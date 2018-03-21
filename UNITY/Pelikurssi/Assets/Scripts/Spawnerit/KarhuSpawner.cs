@@ -31,17 +31,7 @@ public class KarhuSpawner : MonoBehaviour
 
 
 
-	IEnumerator SpawnaaKarhu() {
-
-		while (true)
-		{
-
-			yield return new WaitForSeconds(4);
-			randomSpawner();
-			yield return null;
-		}
-
-	}
+	
 
 
 

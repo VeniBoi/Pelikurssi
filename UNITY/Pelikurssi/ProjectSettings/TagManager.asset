@@ -25,6 +25,8 @@ TagManager:
   - KangasPick
   - GameOver
   - kavalakarpassieni
+  - Paaty
+  - Auto
   layers:
   - Default
   - TransparentFX

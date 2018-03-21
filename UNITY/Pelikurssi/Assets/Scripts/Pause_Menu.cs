@@ -13,6 +13,7 @@ public class Pause_Menu : MonoBehaviour {
 	public AudioMixer audioMixer;
 	public GameObject pauseMenuUI;
 	public GameObject SieniMenuUI;
+	public GameObject Kirja3;
 	
 	
 	public GameObject SieniKirja2;
@@ -123,13 +124,32 @@ public class Pause_Menu : MonoBehaviour {
 		SieniMenuUI.SetActive(true);
 	}
 
+	public void Kirja2NuoliOik()
+	{
+		SieniKirja2.SetActive(false);
+		Kirja3.SetActive(true);
+	}
+
 	public void Continue()
 	{
 		SceneManager.LoadScene("Loppu");
 		Time.timeScale = 1f;
 	}
 
-	
+	public void Kirja3NuoliVas()
+	{
+		Kirja3.SetActive(false);
+		SieniKirja2.SetActive(true);
+	}
+
+	public void Kirja3Ruksi()
+	{
+		Kirja3.SetActive(false);
+		SieniKirja2.SetActive(false);
+		pauseMenuUI.SetActive(true);
+
+	}
+
 }
 
 

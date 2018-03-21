@@ -12,6 +12,7 @@ using TMPro;
 public class SieniNoukinta : MonoBehaviour
 {
 	public GameObject Varoitus;
+
 	static public int kavalakarpassieni;
 	static public int Haavapunikkitatti;
 	static public int Kangasrousku;
@@ -23,12 +24,19 @@ public class SieniNoukinta : MonoBehaviour
 	static public int Keltavahvero;
 	static public int score;
 	static public int multiplier;
+
 	public Text countText;
 	public Animator anim;
+
+	public GameObject SiluettiKavala;
+	public GameObject SiluettiRussu;
 	public GameObject SiluettiPenny;
 	public GameObject SiluettiFly;
 	public GameObject SiluettiChan;
 	public GameObject SiluettiLact;
+	public GameObject SiluettiRufus;
+
+
 	static public bool onTrue = false;
 	static public float levelTimer;
 	static public bool updateTimer = true;
@@ -78,24 +86,26 @@ public class SieniNoukinta : MonoBehaviour
 	{
 		if (onTrue == true && collider.gameObject.CompareTag("Karpassieni")) //Tuhoaa sienen ja soittaa animaation jos painetaan yes.
 		{
+			StartCoroutine(SieniPysäytysKarpa());
 			Destroy(collider.gameObject);
 			GameObject.Find("SieniPickupKarpa").GetComponent<Text>().enabled = true;
 			GameObject.Find("SieniPickupKarpa").GetComponent<Animator>().enabled = true;
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 			SiluettiFly.GetComponent<Image>().enabled = false;
-			StartCoroutine(SieniPysäytysKarpa());
+			
 			Kärpässieni++;
 			onTrue = false;
 		}
 
 		else if (onTrue == true && collider.gameObject.CompareTag("kavalakarpassieni")) //Tuhoaa sienen ja soittaa animaation jos painetaan yes.
 		{
+			StartCoroutine(SieniPysäytysKavala());
 			Destroy(collider.gameObject);
 			GameObject.Find("SieniPickupKavala").GetComponent<Text>().enabled = true;
 			GameObject.Find("SieniPickupKavala").GetComponent<Animator>().enabled = true;
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
-			SiluettiFly.GetComponent<Image>().enabled = false;
-			StartCoroutine(SieniPysäytysKavala());
+			SiluettiKavala.GetComponent<Image>().enabled = false;
+			
 			kavalakarpassieni++;
 			onTrue = false;
 		}
@@ -216,7 +226,7 @@ public class SieniNoukinta : MonoBehaviour
 		{
 			GameObject.Find("SieniPickupKangas").GetComponent<Text>().enabled = true;
 			GameObject.Find("SieniPickupKangas").GetComponent<Animator>().enabled = true;
-
+			SiluettiRufus.GetComponent<Image>().enabled = false;
 			Debug.Log("Herkkutatti noukittu!");
 			Destroy(other.gameObject);
 			score = score + 40;
@@ -232,7 +242,7 @@ public class SieniNoukinta : MonoBehaviour
 		{
 			GameObject.Find("SieniPickupIso").GetComponent<Text>().enabled = true;
 			GameObject.Find("SieniPickupIso").GetComponent<Animator>().enabled = true;
-
+			SiluettiRussu.GetComponent<Image>().enabled = false;
 			Debug.Log("Herkkutatti noukittu!");
 			Destroy(other.gameObject);
 			score = score + 35;

@@ -10,6 +10,7 @@ using TMPro;
 
 public class FinalScore : MonoBehaviour {
 
+	public TextMeshProUGUI Death;
 	public TextMeshProUGUI Fly;
 	public TextMeshProUGUI Chanterelle;
 	public TextMeshProUGUI Lactariusrufus;
@@ -32,6 +33,7 @@ public class FinalScore : MonoBehaviour {
 		Penny.text = SieniNoukinta.Herkkutatti + " PENNY BUN";
 		Leccinum.text = SieniNoukinta.Haavapunikkitatti + " LECCINUM";
 		Lactarius.text = SieniNoukinta.Haaparousku + " LACTARIUS TRIVIALIS";
+		Death.text = SieniNoukinta.kavalakarpassieni + " DEATH CAP";
 
 
 		float aika = SieniNoukinta.minutes;		//Haetaan aika sieninoukinta koodista ja näytetään se.

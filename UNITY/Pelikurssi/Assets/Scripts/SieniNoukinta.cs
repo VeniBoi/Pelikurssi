@@ -29,6 +29,10 @@ public class SieniNoukinta : MonoBehaviour
 	public GameObject SiluettiChan;
 	public GameObject SiluettiLact;
 	static public bool onTrue = false;
+	static public float levelTimer;
+	static public bool updateTimer = true;
+	static public float minutes;
+	
 
 
 
@@ -51,13 +55,22 @@ public class SieniNoukinta : MonoBehaviour
 		multiplier = 0;
 		SetCountText();
 
-		
+		levelTimer = 0;
 
 	}
 
 	// Update is called once per frame
 	void Update()
 	{
+		
+		if (updateTimer == true)
+		{
+			levelTimer += Time.deltaTime*1;
+
+		}
+
+		minutes = levelTimer / 60;
+
 	}
 
 	private void OnTriggerStay(Collider collider)
@@ -67,6 +80,7 @@ public class SieniNoukinta : MonoBehaviour
 			Destroy(collider.gameObject);
 			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
 			SiluettiFly.GetComponent<Image>().enabled = false;
+			Kärpässieni++;
 			onTrue = false;
 		}
 	}

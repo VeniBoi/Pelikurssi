@@ -14,6 +14,7 @@ public class Pause_Menu : MonoBehaviour {
 	public GameObject pauseMenuUI;
 	public GameObject SieniMenuUI;
 	public GameObject Kirja3;
+	public GameObject Kirja4;
 	
 	
 	public GameObject SieniKirja2;
@@ -142,8 +143,29 @@ public class Pause_Menu : MonoBehaviour {
 		SieniKirja2.SetActive(true);
 	}
 
+	public void Kirja3NuoliOik()
+	{
+		Kirja3.SetActive(false);
+		Kirja4.SetActive(true);
+	}
+
 	public void Kirja3Ruksi()
 	{
+		Kirja3.SetActive(false);
+		SieniKirja2.SetActive(false);
+		pauseMenuUI.SetActive(true);
+
+	}
+
+	public void Kirja4NuoliVas()
+	{
+		Kirja4.SetActive(false);
+		Kirja3.SetActive(true);
+	}
+
+	public void Kirja4Ruksi()
+	{
+		Kirja4.SetActive(false);
 		Kirja3.SetActive(false);
 		SieniKirja2.SetActive(false);
 		pauseMenuUI.SetActive(true);

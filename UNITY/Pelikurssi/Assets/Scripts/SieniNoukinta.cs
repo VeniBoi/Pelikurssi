@@ -35,6 +35,7 @@ public class SieniNoukinta : MonoBehaviour
 	public GameObject SiluettiChan;
 	public GameObject SiluettiLact;
 	public GameObject SiluettiRufus;
+	public GameObject SiluettiLecci;
 
 
 	static public bool onTrue = false;
@@ -258,7 +259,7 @@ public class SieniNoukinta : MonoBehaviour
 		{
 			GameObject.Find("SieniPickupHaava").GetComponent<Text>().enabled = true;
 			GameObject.Find("SieniPickupHaava").GetComponent<Animator>().enabled = true;
-
+			SiluettiLecci.GetComponent<Image>().enabled = false;
 			Debug.Log("Herkkutatti noukittu!");
 			Destroy(other.gameObject);
 			score = score + 65;

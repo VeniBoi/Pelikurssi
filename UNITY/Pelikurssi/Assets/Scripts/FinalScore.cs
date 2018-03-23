@@ -24,7 +24,7 @@ public class FinalScore : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		scoreText.text = "" + SieniNoukinta.score;  //Päätetään mitä teksti sanoo ja haetaan score toisesta scriptistä.
+		scoreText.text = "" + SieniNoukinta.score * SieniNoukinta.multiplier;  //Päätetään mitä teksti sanoo ja haetaan score toisesta scriptistä.
 
 		Fly.text = SieniNoukinta.Kärpässieni + " FLY AGARIC";
 		Chanterelle.text = SieniNoukinta.Keltavahvero + " CHANTERELLE";

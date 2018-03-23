@@ -22,9 +22,10 @@ public class SieniNoukinta : MonoBehaviour
 	static public int Haaparousku;
 	static public int Psilosieni;
 	static public int Keltavahvero;
-	static public int score;
-	static public int multiplier;
+	static public float score;
+	static public float multiplier;
 
+	public Text multiText;
 	public Text countText;
 	public Animator anim;
 
@@ -42,7 +43,8 @@ public class SieniNoukinta : MonoBehaviour
 	static public float levelTimer;
 	static public bool updateTimer = true;
 	static public float minutes;
-	
+
+	bool herkku = true;
 
 
 
@@ -62,8 +64,10 @@ public class SieniNoukinta : MonoBehaviour
 		Psilosieni = 0;
 		Keltavahvero = 0;
 		score = 0;                       //Asetetaan pistemäärä nollaan.
-		multiplier = 0;
+		multiplier = 1;
+		
 		SetCountText();
+		multiplierSet();
 
 		levelTimer = 0;
 		
@@ -109,6 +113,8 @@ public class SieniNoukinta : MonoBehaviour
 			
 			kavalakarpassieni++;
 			onTrue = false;
+
+			
 		}
 
 	}
@@ -204,7 +210,12 @@ public class SieniNoukinta : MonoBehaviour
 			Herkkutatti++;
 			SiluettiPenny.GetComponent<Image>().enabled = false;
 			
-			
+			if (herkku == true)
+			{
+				multiplier += .1f;
+				herkku = false;
+				multiplierSet();
+			}
 
 		}
 
@@ -277,8 +288,11 @@ public class SieniNoukinta : MonoBehaviour
 	public void SetCountText()
 	{
 		countText.text = "Score: " + score;
+	}
 
-
+	public void multiplierSet()
+	{
+		multiText.text = " X " + multiplier;
 	}
 
 	IEnumerator SieniPysäytysHaapa()		//Pysäyttää hahmon hetkeksi kun poimii sienen.

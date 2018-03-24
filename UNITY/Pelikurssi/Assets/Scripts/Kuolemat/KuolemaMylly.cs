@@ -33,6 +33,7 @@ public class KuolemaMylly : MonoBehaviour
 		{
 			Debug.Log("Loppu ladattu.");
 			GameObject.Find("ScoreText").GetComponent<Text>().enabled = false;
+			GameObject.Find("Multiplier").GetComponent<Text>().enabled = false;
 
 			GameObject.Find("Main Camera").GetComponent<PostProcessingBehaviour>().profile = otherProfile;
 			Paneeli.SetActive(true);

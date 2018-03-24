@@ -45,6 +45,7 @@ public class KuolemaPommi : MonoBehaviour
 	{
 		Debug.Log("Loppu ladattu.");
 		GameObject.Find("ScoreText").GetComponent<Text>().enabled = false;
+		GameObject.Find("Multiplier").GetComponent<Text>().enabled = false;
 
 		yield return new WaitForSeconds(3);
 		

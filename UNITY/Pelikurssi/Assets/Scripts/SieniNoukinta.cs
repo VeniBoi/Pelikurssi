@@ -45,6 +45,14 @@ public class SieniNoukinta : MonoBehaviour
 	static public float minutes;
 
 	bool herkku = true;
+	bool kelta = true;
+	bool kavala = true;
+	bool karpas = true;
+	bool haapa = true;
+	bool kangas = true;
+	bool iso = true;
+	bool haava = true;
+
 
 
 
@@ -100,6 +108,13 @@ public class SieniNoukinta : MonoBehaviour
 			
 			Kärpässieni++;
 			onTrue = false;
+
+			if (karpas == true)
+			{
+				multiplier += .1f;
+				karpas = false;
+				multiplierSet();
+			}
 		}
 
 		else if (onTrue == true && collider.gameObject.CompareTag("kavalakarpassieni")) //Tuhoaa sienen ja soittaa animaation jos painetaan yes.
@@ -114,7 +129,13 @@ public class SieniNoukinta : MonoBehaviour
 			kavalakarpassieni++;
 			onTrue = false;
 
-			
+			if (kavala == true)
+			{
+				multiplier += .1f;
+				kavala = false;
+				multiplierSet();
+			}
+
 		}
 
 	}
@@ -174,6 +195,13 @@ public class SieniNoukinta : MonoBehaviour
 			StartCoroutine(SieniPysäytysKelta());
 			SiluettiChan.GetComponent<Image>().enabled = false;
 			Keltavahvero++;
+
+			if (kelta == true)
+			{
+				multiplier += .1f;
+				kelta = false;
+				multiplierSet();
+			}
 		}
 
 		else if (other.gameObject.CompareTag("Haaparousku"))
@@ -190,8 +218,13 @@ public class SieniNoukinta : MonoBehaviour
 			StartCoroutine(SieniPysäytysHaapa());
 			SiluettiLact.GetComponent<Image>().enabled = false;
 			Haaparousku++;
-			
 
+			if (haapa == true)
+			{
+				multiplier += .1f;
+				haapa = false;
+				multiplierSet();
+			}
 		}
 
 		else if (other.gameObject.CompareTag("Herkkutatti"))
@@ -248,6 +281,12 @@ public class SieniNoukinta : MonoBehaviour
 			StartCoroutine(SieniPysäytysKangas());
 			Kangasrousku++;
 
+			if (kangas == true)
+			{
+				multiplier += .1f;
+				kangas = false;
+				multiplierSet();
+			}
 		}
 
 		else if (other.gameObject.CompareTag("Isohapero"))
@@ -264,6 +303,12 @@ public class SieniNoukinta : MonoBehaviour
 			StartCoroutine(SieniPysäytysIso());
 			Isohapero++;
 
+			if (iso == true)
+			{
+				multiplier += .1f;
+				iso = false;
+				multiplierSet();
+			}
 		}
 
 		else if (other.gameObject.CompareTag("Haavapunikkitatti"))
@@ -280,6 +325,12 @@ public class SieniNoukinta : MonoBehaviour
 			StartCoroutine(SieniPysäytysHaava());
 			Haavapunikkitatti++;
 
+			if (haava == true)
+			{
+				multiplier += .1f;
+				haava = false;
+				multiplierSet();
+			}
 		}
 
 

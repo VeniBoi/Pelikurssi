@@ -333,6 +333,14 @@ public class SieniNoukinta : MonoBehaviour
 			}
 		}
 
+		else if (other.gameObject.CompareTag("Booster"))
+		{
+			Debug.Log("Boosteri!");
+			GameObject.Find("Pelaaja").GetComponent<PlayerController>().animator.Play("Noukkiminen");
+			Destroy(other.gameObject);
+			StartCoroutine(Booster());
+		}
+
 
 	}
 
@@ -454,5 +462,13 @@ public class SieniNoukinta : MonoBehaviour
 
 	}
 
+	IEnumerator Booster()
+	{
+		GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 0.1f;
+		yield return new WaitForSeconds(0.2f);
+		GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 16f;
+		yield return new WaitForSeconds(10);
+		GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 8f;
+	}
 }
 	

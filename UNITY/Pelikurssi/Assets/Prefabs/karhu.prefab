@@ -729,7 +729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e70d464fa2ba14144bcd0fb17e7ed7f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _patrolWaiting: 0
+  _patrolWaiting: 1
   _totalWaitTime: 3
   _switchProbability: 0.2
 --- !u!114 &114529516441042924
@@ -743,7 +743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4a8d876673f07438eb430a4445cc68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lookRadius: 10
+  lookRadius: 15
 --- !u!114 &114844760997562948
 MonoBehaviour:
   m_ObjectHideFlags: 1

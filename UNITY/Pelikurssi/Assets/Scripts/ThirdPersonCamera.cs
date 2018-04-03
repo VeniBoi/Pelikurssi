@@ -7,7 +7,8 @@ using System.Collections;
 public class ThirdPersonCamera : MonoBehaviour
 {
 	public Camera Kamera;
-	
+
+	public float lammisenkiki;
 
 	public bool lockCursor;
 	public float mouseSensitivity = 5f;

@@ -10,12 +10,13 @@ using UnityEngine.UI;
 
 public class LevelLoader : MonoBehaviour  //Tehdään funktioita joita UI:n buttonit käyttävät.
 {
-
+	public GameObject Highscores;
 	public GameObject loadingScreen;
 	public Slider slider;
 
     public void LoadLevel (int sceneIndex)
     {
+		Highscores.SetActive(false);
 		StartCoroutine(LoadAsynchronously(sceneIndex));
 
     }

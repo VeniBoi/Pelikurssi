@@ -43,7 +43,7 @@ public class ConnectedWayPoint : MonoBehaviour {
 		if (_connections.Count == 0)
 		{
 			//No waypoints? Return null and complain
-			Debug.LogError("Insufficient waypoint count.");
+			
 			return null;
 		}
 		else if(_connections.Count == 1 && _connections.Contains(previousWaypoint))

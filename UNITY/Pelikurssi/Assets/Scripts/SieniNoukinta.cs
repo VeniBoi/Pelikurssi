@@ -22,7 +22,7 @@ public class SieniNoukinta : MonoBehaviour
 	static public int Haaparousku;
 	static public int Psilosieni;
 	static public int Keltavahvero;
-	static public float score;
+	static public int score;
 	static public float multiplier;
 
 	public Text multiText;

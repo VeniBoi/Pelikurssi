@@ -17,6 +17,7 @@ public class Pause_Menu : MonoBehaviour {
 	public GameObject Kirja4;
 	
 	
+	
 	public GameObject SieniKirja2;
 
 	private void Start()
@@ -82,6 +83,11 @@ public class Pause_Menu : MonoBehaviour {
 	public void setVolume (float volume)
 	{
 		audioMixer.SetFloat("volume", volume);
+	}
+
+	public void AdjustClippingDistance(float newDistance)
+	{
+		
 	}
 
 	public void SetFullscreen (bool isFullscreen)

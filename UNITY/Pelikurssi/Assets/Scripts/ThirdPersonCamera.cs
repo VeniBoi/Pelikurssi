@@ -6,6 +6,8 @@ using System.Collections;
 
 public class ThirdPersonCamera : MonoBehaviour
 {
+	public Camera Kamera;
+	
 
 	public bool lockCursor;
 	public float mouseSensitivity = 5f;
@@ -27,6 +29,8 @@ public class ThirdPersonCamera : MonoBehaviour
             Cursor.lockState = CursorLockMode.Locked;  //Lukitaan kursori näyttöön ja piilotetaan se
             Cursor.visible = false;
         }
+
+		
     }
 
     void LateUpdate()
@@ -40,11 +44,15 @@ public class ThirdPersonCamera : MonoBehaviour
 
         transform.position = target.position - transform.forward * dstFromTarget;
 
+		
+
     }
 
 	public void AdjustSensitivity (float newSpeed)
 	{
 		mouseSensitivity = newSpeed;
 	}
+
+	
 
 }

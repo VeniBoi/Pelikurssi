@@ -20,13 +20,16 @@ public class FinalScore : MonoBehaviour {
 	public TextMeshProUGUI Lactarius;
 	public TextMeshProUGUI scoreText;
 	public TextMeshProUGUI Time;
+	static public float pisteet;
 	SieniNoukinta testi;
 
 	// Use this for initialization
 	void Start () {
-		scoreText.text = "" + SieniNoukinta.score * SieniNoukinta.multiplier;  //Päätetään mitä teksti sanoo ja haetaan score toisesta scriptistä.
+		pisteet =  SieniNoukinta.score * SieniNoukinta.multiplier;  //Päätetään mitä teksti sanoo ja haetaan score toisesta scriptistä.
+		pisteet = Mathf.Round(pisteet * 100f) / 100f;
+		scoreText.text = "" + pisteet;
 
-		Fly.text = SieniNoukinta.Kärpässieni + " FLY AGARIC";
+		Fly.text = SieniNoukinta.Kärpässieni + " FLY AGARIC"; 
 		Chanterelle.text = SieniNoukinta.Keltavahvero + " CHANTERELLE";
 		Lactariusrufus.text = SieniNoukinta.Kangasrousku + " LACTARIUS RUFUS";		//Asetetaan määrät muuttujista jotka on haettu sieninoukinta koodista.
 		Russula.text = SieniNoukinta.Isohapero + " RUSSULA PALUDOSA";
@@ -37,12 +40,16 @@ public class FinalScore : MonoBehaviour {
 
 
 		float aika = SieniNoukinta.minutes;		//Haetaan aika sieninoukinta koodista ja näytetään se.
-		Time.text = aika.ToString("f2") + " minutes";
+		Time.text = aika.ToString("f1") + " minutes";
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+
+		if (Input.GetKeyDown(KeyCode.CapsLock))
+		{
+			Debug.Log("" + pisteet);
+		}
 	}
 
 	

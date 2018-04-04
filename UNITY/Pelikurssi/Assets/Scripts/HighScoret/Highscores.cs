@@ -18,12 +18,12 @@ public class Highscores : MonoBehaviour
 		instance = this;
 	}
 
-	public static void AddNewHighscore(string username, int score)
+	public static void AddNewHighscore(string username, float score)
 	{
 		instance.StartCoroutine(instance.UploadNewHighscore(username, score));
 	}
 
-	IEnumerator UploadNewHighscore(string username, int score)
+	IEnumerator UploadNewHighscore(string username, float score)
 	{
 		WWW www = new WWW(webURL + privateCode + "/add/" + WWW.EscapeURL(username) + "/" + score);
 		yield return www;

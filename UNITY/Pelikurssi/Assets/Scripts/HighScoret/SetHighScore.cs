@@ -7,13 +7,13 @@ using UnityEngine.SceneManagement;
 
 public class SetHighScore : MonoBehaviour
 {
-	public int score;
+	public float score;
 	public string username;
 	public InputField input;
 
 	private void Start()
 	{
-		score = SieniNoukinta.score;
+		score = FinalScore.pisteet;
 	}
 
 	private void Update()

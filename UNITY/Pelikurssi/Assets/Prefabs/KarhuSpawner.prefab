@@ -97,3 +97,5 @@ MonoBehaviour:
   spawnees:
   - {fileID: 1588794918666480, guid: 5045f323403760c4c8563865cc2d0ad7, type: 2}
   spawnPos: {fileID: 4724451797990450}
+  aika1: 30
+  aika2: 60

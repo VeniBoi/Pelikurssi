@@ -53,9 +53,16 @@ public class SieniNoukinta : MonoBehaviour
 	bool iso = true;
 	bool haava = true;
 
+	static public int Karhut;
+	public int Karhut2;
+	public Text setText;
 
 
 
+	public void SetBearText()
+	{
+		setText.text = "BEARS IN THE AREA :  " + Karhut;
+	}
 
 
 
@@ -76,6 +83,7 @@ public class SieniNoukinta : MonoBehaviour
 		
 		SetCountText();
 		multiplierSet();
+		
 
 		levelTimer = 0;
 		
@@ -84,7 +92,10 @@ public class SieniNoukinta : MonoBehaviour
 	// Update is called once per frame
 	void Update()
 	{
-		
+		Karhut = KarhuSpawner.karhujaKartalla;
+		Karhut2 = Karhut;
+		SetBearText();
+
 		if (updateTimer == true)
 		{
 			levelTimer += Time.deltaTime*1;
@@ -470,5 +481,9 @@ public class SieniNoukinta : MonoBehaviour
 		yield return new WaitForSeconds(10);
 		GameObject.Find("Pelaaja").GetComponent<PlayerController>().runSpeed = 8f;
 	}
+
+	 
+
+	
 }
 	

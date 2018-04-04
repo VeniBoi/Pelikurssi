@@ -3,50 +3,61 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class EnemyController : MonoBehaviour {
 
-	public float lookRadius = 10f;
-
-	Transform target;
-	NavMeshAgent agent;
-	
+namespace Assets.Code
+{
 
 
-	// Use this for initialization
-	void Start () {
+	public class EnemyController : MonoBehaviour
+	{
 
-		target = PlayerManager.instance.player.transform;
-		agent = GetComponent<NavMeshAgent>();
-		
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
+		public float lookRadius = 10f;
 
-		float distance = Vector3.Distance(target.position, transform.position);
+		Transform target;
+		NavMeshAgent agent;
 
-		if (distance <= lookRadius)
+
+
+		// Use this for initialization
+		void Start()
 		{
-			
-			agent.SetDestination(target.position);
-			agent.speed = 8.3f;
-			gameObject.GetComponent<NPCSimplePatrol>().enabled = false;
-			StartCoroutine(stop());
+
+			target = PlayerManager.instance.player.transform;
+			agent = GetComponent<NavMeshAgent>();
+
+
 		}
-	}
 
-	private void OnDrawGizmos()
-	{
-		Gizmos.color = Color.red;
-		Gizmos.DrawWireSphere(transform.position, lookRadius);
-	}
+		// Update is called once per frame
+		void Update()
+		{
 
-	IEnumerator stop()
-	{
-		yield return new WaitForSeconds(17);
-		agent.speed = 2;
-		gameObject.GetComponent<NPCSimplePatrol>().enabled = true;
+			float distance = Vector3.Distance(target.position, transform.position);
 
+			if (distance <= lookRadius)
+			{
+
+				agent.SetDestination(target.position);
+				agent.speed = 8.3f;
+				gameObject.GetComponent<KarhuPatrol>().enabled = false;
+				StartCoroutine(stop());
+			}
+		}
+
+		private void OnDrawGizmos()
+		{
+			Gizmos.color = Color.red;
+			Gizmos.DrawWireSphere(transform.position, lookRadius);
+		}
+
+		IEnumerator stop()
+		{
+			yield return new WaitForSeconds(17);
+			agent.speed = 1;
+			gameObject.GetComponent<KarhuPatrol>().enabled = true;
+			yield return new WaitForSeconds(3);
+			agent.speed = 3.5f;
+
+		}
 	}
 }

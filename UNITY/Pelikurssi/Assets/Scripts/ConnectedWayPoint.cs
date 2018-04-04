@@ -5,74 +5,78 @@ using UnityEngine.AI;
 using System.Linq;
 using System.Text;
 
-public class ConnectedWayPoint : MonoBehaviour {
 
-	[SerializeField]
-	protected float _connectivityRadius = 50f;
+namespace Assets.Code
+{
 
-	List<ConnectedWayPoint> _connections;
-
-	public void Start()
+	public class ConnectedWayPoint : MonoBehaviour
 	{
-		//Grab all waypoint objects in scene
-		GameObject[] allWayPoints = GameObject.FindGameObjectsWithTag("Waypoint");
 
-		//Create a list of waypoints i can refer to later.
-		_connections = new List<ConnectedWayPoint>();
+		[SerializeField]
+		protected float _connectivityRadius = 50f;
 
-		//Check if they're a connected waypoint.
-		for(int i = 0; i < allWayPoints.Length; i++)
+		List<ConnectedWayPoint> _connections;
+
+		public void Start()
 		{
-			ConnectedWayPoint nextWayPoint = allWayPoints[i].GetComponent<ConnectedWayPoint>();
+			//Grab all waypoint objects in scene
+			GameObject[] allWayPoints = GameObject.FindGameObjectsWithTag("Waypoint");
 
-			//i.e we found a waypoint
-			if(nextWayPoint != null)
+			//Create a list of waypoints i can refer to later.
+			_connections = new List<ConnectedWayPoint>();
+
+			//Check if they're a connected waypoint.
+			for (int i = 0; i < allWayPoints.Length; i++)
 			{
-				if (Vector3.Distance(this.transform.position, nextWayPoint.transform.position) <= _connectivityRadius && nextWayPoint != this)
+				ConnectedWayPoint nextWayPoint = allWayPoints[i].GetComponent<ConnectedWayPoint>();
+
+				//i.e we found a waypoint
+				if (nextWayPoint != null)
 				{
-					_connections.Add(nextWayPoint);
+					if (Vector3.Distance(this.transform.position, nextWayPoint.transform.position) <= _connectivityRadius && nextWayPoint != this)
+					{
+						_connections.Add(nextWayPoint);
+					}
 				}
 			}
 		}
-	}
 
-	
-
-	public ConnectedWayPoint NextWaypoint(ConnectedWayPoint previousWaypoint)
-	{
-		if (_connections.Count == 0)
+		private void OnDrawGizmos()
 		{
-			//No waypoints? Return null and complain
-			
-			return null;
+			Gizmos.color = Color.yellow;
+			Gizmos.DrawWireSphere(transform.position, _connectivityRadius);
 		}
-		else if(_connections.Count == 1 && _connections.Contains(previousWaypoint))
-		{
-			//Only one waypoint and it's the previous? Just use that.
-			return previousWaypoint;
-		}
-		else //Otherwise find a random that's not the previous one.
-		{
-			ConnectedWayPoint nextWayPoint;
-			int nextIndex = 0;
 
-			do
+		public ConnectedWayPoint NextWaypoint(ConnectedWayPoint previousWaypoint)
+		{
+			if (_connections.Count == 0)
 			{
-				nextIndex = Random.Range(0, _connections.Count);
-				nextWayPoint = _connections[nextIndex];
+				//No waypoints? Return null and complain
 
-			} while (nextWayPoint == previousWaypoint);
+				return null;
+			}
+			else if (_connections.Count == 1 && _connections.Contains(previousWaypoint))
+			{
+				//Only one waypoint and it's the previous? Just use that.
+				return previousWaypoint;
+			}
+			else //Otherwise find a random that's not the previous one.
+			{
+				ConnectedWayPoint nextWayPoint;
+				int nextIndex = 0;
 
-			return nextWayPoint;
+				do
+				{
+					nextIndex = Random.Range(0, _connections.Count);
+					nextWayPoint = _connections[nextIndex];
+
+				} while (nextWayPoint == previousWaypoint);
+
+				return nextWayPoint;
+			}
 		}
-	}
 
-	private void OnDrawGizmos()
-	{
-		Gizmos.color = Color.yellow;
-		Gizmos.DrawWireSphere(transform.position, _connectivityRadius);
 	}
-
 }
 
 

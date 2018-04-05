@@ -994,6 +994,7 @@ MonoBehaviour:
   Paneeli: {fileID: 1081714520303910, guid: d955e4e97e7e4a342a7b4417c76c0693, type: 2}
   otherProfile: {fileID: 11400000, guid: ac37beb84198a80408eeef01eb576e7a, type: 2}
   Prefab: {fileID: 1081714520303910, guid: d955e4e97e7e4a342a7b4417c76c0693, type: 2}
+  Aani: {fileID: 82763273064429986}
 --- !u!114 &114864847936453178
 MonoBehaviour:
   m_ObjectHideFlags: 1

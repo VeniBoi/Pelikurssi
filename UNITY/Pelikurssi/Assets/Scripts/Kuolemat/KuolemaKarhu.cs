@@ -15,10 +15,13 @@ public class KuolemaKarhu : MonoBehaviour
 	public PostProcessingProfile otherProfile;
 	private GameObject testi;
 	public GameObject Prefab;
+	public AudioSource Aani;
+	
 
 	// Use this for initialization
 	void Start()
 	{
+		
 
 	}
 
@@ -33,6 +36,7 @@ public class KuolemaKarhu : MonoBehaviour
 	{                                                   // niin ladataan uusi  scene (loppu).
 		if (other.gameObject.CompareTag("Player"))
 		{
+			Aani.enabled = false;
 			Debug.Log("Loppu ladattu.");
 			GameObject.Find("ScoreText").GetComponent<Text>().enabled = false;
 			GameObject.Find("Multiplier").GetComponent<Text>().enabled = false;

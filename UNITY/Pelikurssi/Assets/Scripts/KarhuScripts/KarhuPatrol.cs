@@ -1,6 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 using UnityEngine.AI;
-using System.Collections;
 
 
 public class KarhuPatrol : MonoBehaviour
@@ -12,33 +13,41 @@ public class KarhuPatrol : MonoBehaviour
 	public float wanderRange = 50f;
 	bool chasing;
 	public float lookRadius = 10f;
-
 	Transform target;
+	public Transform pelaaja;
+	public EnemyController EnemyController;
+		
+
+	
+
+	
 
 
 	void Awake()
 	{
 		//Get the NavMeshAgent so we can send it directions and set start position to the initial location
+
+		target = PlayerManager.instance.player.transform;
 		agent = GetComponent("NavMeshAgent") as NavMeshAgent;
 		agent.speed = wanderSpeed;
 		startPosition = this.transform.position;
 		InvokeRepeating("Wander", 1f, 5f);
 	}
 
-	/*private void Update()
+	private void Update()
 	{
 		float distance = Vector3.Distance(target.position, transform.position);
 
 		if (distance <= lookRadius)
 		{
 
-			agent.SetDestination(target.position);
-			agent.speed = 8.3f;
-			gameObject.GetComponent<NPCSimplePatrol>().enabled = false;
-			StartCoroutine(stop());
+
+			EnemyController.enabled = true;
+			this.enabled = false;
+
 		}
 	}
-	*/
+	
 	void Wander()
 	{
 		//Pick a random location within wander-range of the start position and send the agent there

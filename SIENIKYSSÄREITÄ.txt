@@ -22,6 +22,8 @@ B 10 VÄÄRIN
 C 30 VÄÄRIN
 D 80 OIKEIN
 
+---------------------------------------------------------------------------------------------------------------------------
+
 5. What makes fungi different from plants?
 A They reprocude from spores and they can't produce their own food OIKEIN
 B They cant survive in the winter VÄÄRIN

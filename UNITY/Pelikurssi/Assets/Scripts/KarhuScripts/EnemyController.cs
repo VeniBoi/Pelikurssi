@@ -4,8 +4,8 @@ using UnityEngine;
 using UnityEngine.AI;
 
 
-namespace Assets.Code
-{
+//namespace Assets.Code
+//{
 
 
 	public class EnemyController : MonoBehaviour
@@ -25,26 +25,40 @@ namespace Assets.Code
 			target = PlayerManager.instance.player.transform;
 			agent = GetComponent<NavMeshAgent>();
 
+			
+			agent.speed = 8.3f;
+
+			StartCoroutine(stop());
+
 
 		}
 
-		// Update is called once per frame
-		void Update()
+
+	private void Update()
+	{
+		agent.SetDestination(target.position);
+	}
+
+	// Update is called once per frame
+	/*void Update()
+	{
+
+		float distance = Vector3.Distance(target.position, transform.position);
+
+		if (distance <= lookRadius)
 		{
 
-			float distance = Vector3.Distance(target.position, transform.position);
 
-			if (distance <= lookRadius)
-			{
+			agent.SetDestination(target.position);
+			agent.speed = 8.3f;
 
-				agent.SetDestination(target.position);
-				agent.speed = 8.3f;
-				gameObject.GetComponent<KarhuPatrol>().enabled = false;
-				StartCoroutine(stop());
-			}
+			StartCoroutine(stop());
 		}
+	}
+	*/
 
-		private void OnDrawGizmos()
+
+	private void OnDrawGizmos()
 		{
 			Gizmos.color = Color.red;
 			Gizmos.DrawWireSphere(transform.position, lookRadius);
@@ -54,10 +68,12 @@ namespace Assets.Code
 		{
 			yield return new WaitForSeconds(17);
 			agent.speed = 1;
-			gameObject.GetComponent<KarhuPatrol>().enabled = true;
+			
 			yield return new WaitForSeconds(3);
 			agent.speed = 3.5f;
+			gameObject.GetComponent<KarhuPatrol>().enabled = true;
+			this.enabled = false;
 
-		}
 	}
-}
+	}
+//}

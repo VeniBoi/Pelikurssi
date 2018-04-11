@@ -13,6 +13,7 @@ public class Kysymys : MonoBehaviour
 	private GameObject testi;
 	public GameObject Dialogi1;
 	public GameObject Dialogi2;
+	public Kysymys koodi;
 
 	
 	int randomInt;
@@ -20,6 +21,8 @@ public class Kysymys : MonoBehaviour
 	// Use this for initialization
 	void Start()
 	{
+		Kysymys koodi = GetComponent<Kysymys>();
+		
 		
 	}
 	void Update()
@@ -37,6 +40,7 @@ public class Kysymys : MonoBehaviour
 			randomSpawner();
 			PoistaDialogi();
 		}
+		
 	}
 
 	//Instantiate(spawnees[randomInt], transform.position, Quaternion.identity);
@@ -58,6 +62,8 @@ public class Kysymys : MonoBehaviour
 	{
 		Dialogi1.SetActive(false);
 		Dialogi2.SetActive(false);
+
+		koodi.enabled = false;
 
 	}
 

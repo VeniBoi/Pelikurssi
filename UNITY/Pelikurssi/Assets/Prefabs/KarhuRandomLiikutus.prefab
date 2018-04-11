@@ -105,7 +105,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1134120002078896}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e70d464fa2ba14144bcd0fb17e7ed7f7, type: 3}
   m_Name: 
@@ -127,6 +127,7 @@ MonoBehaviour:
   Paneeli: {fileID: 1081714520303910, guid: d955e4e97e7e4a342a7b4417c76c0693, type: 2}
   otherProfile: {fileID: 11400000, guid: ac37beb84198a80408eeef01eb576e7a, type: 2}
   Prefab: {fileID: 1081714520303910, guid: d955e4e97e7e4a342a7b4417c76c0693, type: 2}
+  Aani: {fileID: 0}
 --- !u!114 &114954205191590324
 MonoBehaviour:
   m_ObjectHideFlags: 1

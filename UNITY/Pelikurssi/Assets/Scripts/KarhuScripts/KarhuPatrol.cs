@@ -23,15 +23,16 @@ public class KarhuPatrol : MonoBehaviour
 	
 
 
-	void Awake()
+	void Start()
 	{
 		//Get the NavMeshAgent so we can send it directions and set start position to the initial location
 
-		target = PlayerManager.instance.player.transform;
+		//target = PlayerManager.instance.player.transform;
 		agent = GetComponent("NavMeshAgent") as NavMeshAgent;
 		agent.speed = wanderSpeed;
 		startPosition = this.transform.position;
 		InvokeRepeating("Wander", 1f, 5f);
+		target = PlayerManager.instance.player.transform;
 	}
 
 	private void Update()
@@ -46,6 +47,7 @@ public class KarhuPatrol : MonoBehaviour
 			this.enabled = false;
 
 		}
+		
 	}
 	
 	void Wander()
@@ -67,7 +69,7 @@ public class KarhuPatrol : MonoBehaviour
 
 	
 
-	void StopChasing()
+	/*void StopChasing()
 	{
 		chasing = false;
 		//Return Home then start wandering
@@ -75,7 +77,7 @@ public class KarhuPatrol : MonoBehaviour
 		agent.SetDestination(startPosition);
 		InvokeRepeating("Wander", 0.5f, 5f);
 	}
-
+	*/
 	
 	
 

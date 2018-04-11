@@ -28,19 +28,17 @@ using UnityEngine.AI;
 			
 			agent.speed = 8.3f;
 
-			StartCoroutine(stop());
+			
 
 
 		}
 
 
-	private void Update()
-	{
-		agent.SetDestination(target.position);
-	}
+	
+	
 
 	// Update is called once per frame
-	/*void Update()
+	void Update()
 	{
 
 		float distance = Vector3.Distance(target.position, transform.position);
@@ -48,14 +46,16 @@ using UnityEngine.AI;
 		if (distance <= lookRadius)
 		{
 
-
-			agent.SetDestination(target.position);
 			agent.speed = 8.3f;
+			agent.SetDestination(target.position);
+			
+
+			//gameObject.GetComponent<KarhuPatrol>().enabled = false;
 
 			StartCoroutine(stop());
 		}
 	}
-	*/
+	
 
 
 	private void OnDrawGizmos()
@@ -66,13 +66,14 @@ using UnityEngine.AI;
 
 		IEnumerator stop()
 		{
-			yield return new WaitForSeconds(17);
-			agent.speed = 1;
+		
+		yield return new WaitForSeconds(17);
+				agent.speed = 1;
 			
-			yield return new WaitForSeconds(3);
-			agent.speed = 3.5f;
-			gameObject.GetComponent<KarhuPatrol>().enabled = true;
-			this.enabled = false;
+		yield return new WaitForSeconds(3);
+				agent.speed = 3.5f;
+				gameObject.GetComponent<KarhuPatrol>().enabled = true;
+				this.enabled = false;
 
 	}
 	}

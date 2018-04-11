@@ -306,7 +306,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4879648513021798}
   - component: {fileID: 95777485892514240}
-  - component: {fileID: 54168565498516812}
   - component: {fileID: 136141968833676506}
   - component: {fileID: 114844760997562948}
   - component: {fileID: 114344594291178188}
@@ -315,6 +314,7 @@ GameObject:
   - component: {fileID: 114734844228989282}
   - component: {fileID: 114864847936453178}
   - component: {fileID: 114714968247621348}
+  - component: {fileID: 54293140000411626}
   m_Layer: 0
   m_Name: karhu
   m_TagString: Untagged
@@ -718,7 +718,7 @@ Transform:
   m_Father: {fileID: 4596001187132078}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!54 &54168565498516812
+--- !u!54 &54293140000411626
 Rigidbody:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

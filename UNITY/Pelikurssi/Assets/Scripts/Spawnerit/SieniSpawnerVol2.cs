@@ -42,11 +42,11 @@ public class SieniSpawnerVol2 : MonoBehaviour
 	{                                           // Tämän jälkeen odotetaan hetki kunnes sieni spawnaa uudestaan.
 												// Kun sieneen on osuttu asetetaan collideri hetkeksi pois päältä
 												//Tämä estää sienikämppäämisen.
-		yield return new WaitForSeconds(3);
+		yield return new WaitForSeconds(12);
 		Debug.Log("Uusi sieni");
 		randomSpawner();
 		Debug.Log("Odotetaan 5 sekuntia.");
-		yield return new WaitForSeconds(5);
+		yield return new WaitForSeconds(14);
 		Debug.Log("5 sekuntia on mennyt.");
 		GetComponent<Collider>().enabled = true;
 
